@@ -53,3 +53,25 @@ const phone=form.elements.phone;
 phone.addEventListener('input',()=>phone.setCustomValidity(''));
 form.addEventListener('submit',e=>{ e.preventDefault(); const digits=phone.value.replace(/\D/g,''); if(digits.length<10||digits.length>15){phone.setCustomValidity('Введите телефон: от 10 до 15 цифр.');phone.reportValidity();return;} const data=new FormData(form); const message=`Здравствуйте! Хочу обсудить проект.\nУслуга: ${data.get('service')}\nМеня зовут: ${String(data.get('name')).trim()}\nТелефон: ${data.get('phone')}`; document.querySelector('#message-preview').textContent=message; document.querySelector('#whatsapp-send').href=`https://wa.me/79385234437?text=${encodeURIComponent(message)}`; document.querySelector('#form-result').hidden=false; document.querySelector('#copy-message').textContent='Скопировать сообщение'; document.querySelector('#whatsapp-send').focus(); });
 document.querySelector('#copy-message').addEventListener('click', async e=>{try{await navigator.clipboard.writeText(document.querySelector('#message-preview').textContent);e.target.textContent='Скопировано';}catch{e.target.textContent='Выделите и скопируйте текст выше';}});
+
+// Arrows and the phone symbol are emoji on some iPhones. Replace only these
+// decorative text glyphs with the site's own monochrome vector icons.
+const iconGlyphs = { '↗': 'arrow', '☎': 'phone' };
+const iconTextNodes = [];
+const iconWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+while (iconWalker.nextNode()) {
+  const node = iconWalker.currentNode;
+  if (/[↗☎]/.test(node.nodeValue) && !node.parentElement.closest('script,style,svg')) iconTextNodes.push(node);
+}
+iconTextNodes.forEach(node => {
+  const fragment = document.createDocumentFragment();
+  node.nodeValue.split(/([↗☎])/).forEach(part => {
+    if (iconGlyphs[part]) {
+      const icon = document.createElement('span');
+      icon.className = `site-icon site-icon-${iconGlyphs[part]}`;
+      icon.setAttribute('aria-hidden', 'true');
+      fragment.append(icon);
+    } else if (part) fragment.append(document.createTextNode(part));
+  });
+  node.replaceWith(fragment);
+});
