@@ -11,8 +11,26 @@
 .layer-description { color: #d0c9bb; line-height: 1.55; }
 .model-stage { min-height: 430px; margin: 10px 0; padding: 20px; background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.13); border-radius: 3px; }
 .model-stage::before { content: 'СЛОИ / СЦЕНАРИИ / КОМФОРТ'; position: absolute; left: 20px; bottom: 22px; color: rgba(240,209,120,.72); font-size: 8px; letter-spacing: .18em; }
-.ceiling-model { filter: drop-shadow(0 26px 25px rgba(0,0,0,.35)); }
-.model-legend, .scheme-note { z-index: 2; }
+/* Keep the model free of filters: they flatten its preserve-3d layers. */
+.ceiling-model { animation: engineering-orbit 9s ease-in-out infinite; }
+@keyframes engineering-orbit {
+  0%, 100% { transform: rotateX(52deg) rotateZ(-37deg); }
+  50% { transform: rotateX(60deg) rotateZ(-27deg); }
+}
+.plane { box-shadow: 10px 14px 22px rgba(0,0,0,.28), 8px 9px 0 rgba(0,0,0,.16); }
+.finish { box-shadow: 12px 18px 28px rgba(0,0,0,.25), 9px 9px 0 #b9b6aa; }
+.model-stage[data-mode=all] .base { transform: translate3d(-28px,-25px,105px); }
+.model-stage[data-mode=all] .acoustic { transform: translate3d(0,0,22px); }
+.model-stage[data-mode=all] .finish { transform: translate3d(26px,24px,-58px); }
+.model-stage[data-mode=sound] .base { transform: translate3d(-42px,-38px,150px); opacity: .08; }
+.model-stage[data-mode=sound] .acoustic { transform: translate3d(0,0,36px); opacity: 1; }
+.model-stage[data-mode=sound] .finish { transform: translate3d(42px,38px,-112px); opacity: .08; }
+.model-stage[data-mode=light] .base { transform: translate3d(-42px,-38px,150px); opacity: .04; }
+.model-stage[data-mode=light] .acoustic { transform: translate3d(0,0,45px); opacity: .05; }
+.model-stage[data-mode=light] .finish { transform: translate3d(18px,17px,-28px); opacity: 1; }
+.model-legend { z-index: 2; left: 20px; right: 20px; bottom: 48px; justify-content: center; flex-wrap: wrap; }
+.scheme-note { z-index: 2; left: 20px; right: 20px; bottom: 15px; text-align: center; }
+.model-stage::before { bottom: 84px; }
 
 @media (max-width: 800px) {
   .engineering { padding: 56px 24px 48px; }
@@ -31,10 +49,10 @@
   .layer-tabs button { min-width: 0; padding: 12px 5px; font-size: 11px; }
   .layer-description { min-height: 0; margin: 15px 0 0; font-size: 12px; }
   .engineering .text-link { margin-top: 20px; font-size: 12px; }
-  .model-stage { min-height: 300px; margin-top: 30px; padding: 16px 10px 42px; }
-  .model-index { position: static; display: block; margin-bottom: 3px; text-align: right; }
-  .ceiling-model { width: 195px; height: 195px; }
-  .model-legend { bottom: 13px; gap: 8px; font-size: 8px; }
-  .scheme-note { bottom: -1px; font-size: 7px; }
-  .model-stage::before { left: 12px; bottom: 14px; font-size: 6px; }
+  .model-stage { min-height: 350px; margin-top: 30px; padding: 38px 10px 72px; }
+  .model-index { position: absolute; display: block; top: 12px; right: 12px; font-size: 6px; text-align: right; }
+  .ceiling-model { width: 155px; height: 155px; }
+  .model-legend { left: 8px; right: 8px; bottom: 34px; gap: 8px; font-size: 8px; }
+  .scheme-note { left: 8px; right: 8px; bottom: 10px; font-size: 7px; }
+  .model-stage::before { left: 12px; bottom: 72px; font-size: 6px; }
 }
