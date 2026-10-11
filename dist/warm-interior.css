@@ -27,4 +27,9 @@ body{background:var(--paper);color:var(--ink)}
 .engineering-copy>p:not(.eyebrow),.scheme-note{color:#d8d1c4}
 .warranty-stamp{color:var(--accent)}
 .footer{background:#27251f}
+.footer,.footer a,.footer p,.footer-brand p{color:#eee7d9}
+.footer .footer-label{color:#c9bfae}
+.footer>div>a,.footer-brand>span,.footer-bottom{color:#f8f3e8}
+.footer a:hover{color:var(--accent)}
+.footer-bottom{border-color:#777064}
 @media(prefers-reduced-motion:reduce){.floating-seal{animation:none}}
