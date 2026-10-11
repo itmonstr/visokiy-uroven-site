@@ -1,0 +1,40 @@
+/* Engineering section: denser editorial composition with a clearer mobile rhythm. */
+.engineering { background: radial-gradient(circle at 82% 38%, rgba(226,181,73,.12), transparent 26%), #121310; border: 1px solid rgba(255,255,255,.11); }
+.engineering-copy { padding-right: 46px; }
+.engineering h2 { max-width: 680px; margin-top: 22px; font-size: clamp(48px,5.4vw,78px); line-height: .98; letter-spacing: -.055em; }
+.engineering h2 .serif { color: #f0d178; }
+.engineering-copy > p:not(.eyebrow) { font-size: 15px; line-height: 1.65; color: #d0c9bb; }
+.layer-tabs { width: fit-content; padding: 6px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.16); border-radius: 2px; }
+.layer-tabs button { min-width: 92px; border-color: transparent; color: #eee9dc; transition: background .25s ease, color .25s ease, transform .25s ease; }
+.layer-tabs button:hover { transform: translateY(-2px); border-color: rgba(240,209,120,.7); }
+.layer-tabs button.active { background: #f0c95f; color: #171712; }
+.layer-description { color: #d0c9bb; line-height: 1.55; }
+.model-stage { min-height: 430px; margin: 10px 0; padding: 20px; background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.13); border-radius: 3px; }
+.model-stage::before { content: 'СЛОИ / СЦЕНАРИИ / КОМФОРТ'; position: absolute; left: 20px; bottom: 22px; color: rgba(240,209,120,.72); font-size: 8px; letter-spacing: .18em; }
+.ceiling-model { filter: drop-shadow(0 26px 25px rgba(0,0,0,.35)); }
+.model-legend, .scheme-note { z-index: 2; }
+
+@media (max-width: 800px) {
+  .engineering { padding: 56px 24px 48px; }
+  .engineering-copy { padding-right: 0; }
+  .engineering h2 { font-size: clamp(40px,8.2vw,58px); line-height: .99; }
+  .engineering-copy > p:not(.eyebrow) { font-size: 14px; }
+  .model-stage { min-height: 360px; margin-top: 34px; padding: 18px 14px 48px; }
+}
+
+@media (max-width: 600px) {
+  .engineering { padding: 48px 20px 34px; }
+  .engineering h2 { margin: 20px 0 18px; font-size: clamp(36px,9.2vw,52px); letter-spacing: -.045em; }
+  .engineering h2 .serif { font-size: .91em; }
+  .engineering-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.58; }
+  .layer-tabs { display: grid; grid-template-columns: repeat(3,1fr); width: 100%; gap: 5px; margin-top: 22px; }
+  .layer-tabs button { min-width: 0; padding: 12px 5px; font-size: 11px; }
+  .layer-description { min-height: 0; margin: 15px 0 0; font-size: 12px; }
+  .engineering .text-link { margin-top: 20px; font-size: 12px; }
+  .model-stage { min-height: 300px; margin-top: 30px; padding: 16px 10px 42px; }
+  .model-index { position: static; display: block; margin-bottom: 3px; text-align: right; }
+  .ceiling-model { width: 195px; height: 195px; }
+  .model-legend { bottom: 13px; gap: 8px; font-size: 8px; }
+  .scheme-note { bottom: -1px; font-size: 7px; }
+  .model-stage::before { left: 12px; bottom: 14px; font-size: 6px; }
+}
