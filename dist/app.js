@@ -1,4 +1,21 @@
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heroVisual = document.querySelector('[data-hero-parallax]');
+if (heroVisual && !reducedMotion && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  let heroFrame;
+  heroVisual.addEventListener('pointermove', e => {
+    cancelAnimationFrame(heroFrame);
+    heroFrame = requestAnimationFrame(() => {
+      const bounds = heroVisual.getBoundingClientRect();
+      heroVisual.style.setProperty('--hero-x', `${(0.5-(e.clientX-bounds.left)/bounds.width)*12}px`);
+      heroVisual.style.setProperty('--hero-y', `${(0.5-(e.clientY-bounds.top)/bounds.height)*12}px`);
+    });
+  });
+  heroVisual.addEventListener('pointerleave', () => {
+    cancelAnimationFrame(heroFrame);
+    heroVisual.style.setProperty('--hero-x', '0px');
+    heroVisual.style.setProperty('--hero-y', '0px');
+  });
+}
 const archiveFiles=['hero.jpg','img_4254-scaled.jpg','img_4775-scaled.jpg','img-20230224-wa0025.jpg','img-20220428-wa0031.jpg','j8ptsj8pfugqdtxq1myo4ey_hntsmq1.jpg','img-bathroom.jpg','img_2205-scaled.jpg','nsqprq2ihibd3oarxz9hqztudqq7nbe2.jpg','img-20230224-wa0015.jpg','fqm-xlwyyzu6qa7a98io7desqz1euqxh.jpg','20240106_154701-scaled.jpg','p5j5xhmbs0xu0kjw_tqtwp7sdia4ai9j.jpg','img_3306-scaled.jpg','img_4476-scaled.jpg','img_20230803_213728_470.jpg','img-0325.jpg','upvfij68rjxfomdepzpxhtls-htkkyka.jpg','interior.jpg'];
 const archive=document.querySelector('#portfolio-archive');
 archiveFiles.forEach((file,index)=>{const button=document.createElement('button');button.type='button';button.className='project archive-project';button.dataset.image=`assets/${file}`;button.dataset.title=`Выполненная работа — фото ${index+1}`;button.dataset.description='Фотография выполненной работы из портфолио компании «Высокий уровень». Обсудим похожее решение для вашего помещения.';button.hidden=index>=6;const img=document.createElement('img');img.src=`assets/${file}`;img.alt=`Выполненная работа компании — фотография ${index+1}`;img.loading='lazy';const caption=document.createElement('span');caption.className='archive-number';caption.textContent=`${String(index+1).padStart(2,'0')} ↗`;button.append(img,caption);archive.append(button);});
