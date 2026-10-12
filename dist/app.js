@@ -46,8 +46,6 @@ dialog.addEventListener('click',e=>{ if(e.target===dialog){ const r=dialog.getBo
 document.querySelector('#dialog-cta').addEventListener('click',()=>dialog.close());
 document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{ const radio=[...document.querySelectorAll('[name=service]')].find(r=>r.value===a.dataset.service); if(radio)radio.checked=true; }));
 const form=document.querySelector('#lead-form');
-const mobileCta=document.querySelector('.mobile-cta');
-new IntersectionObserver(entries=>{mobileCta.classList.toggle('is-hidden',entries[0].isIntersecting);},{threshold:0,rootMargin:'80px 0px 0px 0px'}).observe(document.querySelector('#contact'));
 form.addEventListener('input',()=>{document.querySelector('#form-result').hidden=true;});
 const phone=form.elements.phone;
 phone.addEventListener('input',()=>phone.setCustomValidity(''));
