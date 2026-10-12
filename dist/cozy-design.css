@@ -1,5 +1,5 @@
 /* A warm, photographic interior catalogue with confident, readable type. */
-:root { --sans:'Golos Text',Arial,sans-serif; --serif:var(--sans); --paper:#fbf7ef; --ink:#29251f; --muted:#73695e; --accent:#efc45f; --line:#dfd5c6; }
+:root { --sans:'Golos Text',Arial,sans-serif; --serif:'Prata',Georgia,serif; --paper:#fbf7ef; --ink:#29251f; --muted:#73695e; --accent:#efc45f; --line:#dfd5c6; }
 body { font-family:var(--sans); font-size:17px; font-weight:500; }
 h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; font-style:normal; letter-spacing:-.035em; }
 .hero h1,.section h2,.trust-layout h2,.contact h2,.engineering h2 { font-weight:800; line-height:1.07; }
@@ -187,6 +187,48 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
  .faq { margin:0 20px; }
  .faq-list summary { font-size:16px; }
  .contact h2 { font-size:34px; }
+}
+
+/* Consistent editorial headings, company branding, and comfortable mobile spacing. */
+h1,h2,h3,.serif,.hero .hero-title-serif,
+.hero h1,.section h2,.trust-layout h2,.contact h2,.engineering h2,
+.service-main h3,.service-list h3,.trust-list h3,.steps h3,
+.engineering h2 .serif,.project-bottom strong,.showcase-card strong {
+ font-family:var(--serif); font-weight:400; letter-spacing:-.045em; line-height:1.18;
+}
+.hero .hero-title-serif { font-size:1em; font-weight:400; }
+.hero-title-line { white-space:normal; }
+.hero-offers li:not(.offer-wide)>span { font-family:var(--serif); font-weight:400; font-size:38px; letter-spacing:-.04em; }
+.brand .company-logo { width:220px; height:auto; object-fit:contain; }
+.footer .company-logo { filter:invert(1); mix-blend-mode:screen; }
+.hero-signature>span:last-child { line-height:1.55; }
+.hero .photo-caption { font-family:var(--sans); font-size:26px; font-weight:650; line-height:1.3; }
+.photo-caption small { display:block; font-size:13px; font-weight:500; margin-top:7px; letter-spacing:0; color:#eee7d9; }
+.hero .photo-corner { max-width:calc(100% - 48px); }
+.hero-visual>img { height:100%; }
+.faq-list details,.faq-list details:first-child { padding:24px; }
+.faq-list summary { align-items:center; gap:16px; line-height:1.5; }
+.faq-list summary span { flex:0 0 24px; text-align:center; line-height:1; }
+.faq-list details p { margin-top:18px; line-height:1.65; }
+.service-inclusions li { position:relative; padding-left:18px; }
+.service-inclusions li::before { content:""; position:absolute; left:0; top:1.2em; width:5px; height:5px; margin:0; border-radius:50%; background:var(--accent); }
+@media(max-width:600px) {
+ .brand .company-logo { width:145px; }
+ .header { padding-left:12px; padding-right:12px; }
+ .header-phone { margin-right:6px; }
+ .hero h1 { font-size:clamp(36px,10.5vw,55px); }
+ .hero-offers li:not(.offer-wide)>span { font-size:32px; }
+ .hero .photo-caption { left:20px; right:20px; bottom:24px; font-size:23px; gap:10px; }
+ .photo-caption .caption-dot { flex:none; }
+ .hero .photo-caption a { flex:0 0 38px; }
+ .hero .photo-corner { top:18px; right:18px; font-size:7px; }
+ .hero-visual { height:340px; min-height:340px; }
+ .faq-list details,.faq-list details:first-child { padding:22px 20px; }
+ .faq-list summary { font-size:16px; }
+ .faq-list details p { font-size:15px; }
+ .section h2,.trust-layout h2,.process .heading-row h2,.projects .heading-row h2 { font-size:32px; }
+ .solution-copy h2 { font-size:29px; }
+ .service-main h3 { font-size:37px; }
 }
 
 /* The existing portfolio photographs become the canvas of each service card. */
