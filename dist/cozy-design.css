@@ -68,6 +68,15 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
 .solution-copy>p,.sound-materials p { font-size:16px; line-height:1.65; }
 .solution-copy h2 { font-size:clamp(32px,3.2vw,48px); }
 .material-tags li,.light-scenarios button { border-radius:10px; }
+.light-scenarios button { min-height:166px; padding:17px; transition:transform .2s,box-shadow .2s,border-color .2s; }
+.light-scenarios button:hover { transform:translateY(-3px); box-shadow:0 10px 24px #6f4e1a14; }
+.light-scenarios button.active { border-color:#c39028; box-shadow:inset 0 0 0 1px #c39028; }
+.light-scenarios button i,.light-scenarios button:first-child i,.light-scenarios button:nth-child(2) i,.light-scenarios button:last-child i { display:grid; place-items:center; width:48px; height:48px; margin:0 0 18px; background:#fff9e9; border:1px solid #ead7af; border-radius:14px; box-shadow:none; }
+.light-scenarios button i::before { content:""; display:block; width:30px; height:30px; background:center/contain no-repeat url('assets/icon-daylight.svg'); }
+.light-scenarios button:first-child i::before { background-image:url('assets/icon-sunrise.svg'); }
+.light-scenarios button:last-child i::before { background-image:url('assets/icon-evening.svg'); }
+.light-scenarios strong { font-size:17px; font-weight:800; }
+.light-scenarios span { font-size:13px; line-height:1.45; color:#6d6254; }
 .engineering { margin:0 3vw; border-radius:26px; clip-path:none; padding:48px 3vw; gap:26px; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
 .engineering h2 { font-size:clamp(34px,3.4vw,54px); letter-spacing:-.035em; }
 .engineering h2 .serif { color:#efc45f; font-weight:800; }
@@ -163,6 +172,8 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
  .solution-panel,.solution-panel.reverse { padding:14px; gap:20px; border-radius:20px; }
  .solution-photo { height:290px; }
  .solution-copy h2 { font-size:30px; }
+ .light-scenarios button { min-height:0; grid-template-columns:48px 1fr; gap:3px 14px; align-items:center; }
+ .light-scenarios button i,.light-scenarios button:first-child i,.light-scenarios button:nth-child(2) i,.light-scenarios button:last-child i { grid-row:span 2; margin:0; }
  .engineering { margin:0 12px; padding:32px 18px; }
  .engineering h2 { font-size:33px; }
  .engineering-copy>p:not(.eyebrow) { font-size:16px; }
