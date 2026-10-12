@@ -151,6 +151,7 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
  .promise-bar div { font-size:14px; }
  .intro-image { height:290px; }
  .intro-copy h2,.section h2,.trust-layout h2 { font-size:34px; }
+ .trust-layout h2 .serif { display:block; }
  .intro-audiences { grid-template-columns:1fr; }
  .service-main { padding:24px; }
  .service-main h3 { font-size:39px; }
