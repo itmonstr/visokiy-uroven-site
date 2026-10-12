@@ -191,7 +191,12 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
 }
 
 /* The existing portfolio photographs become the canvas of each service card. */
-.service-list article { position:relative; isolation:isolate; overflow:hidden; min-height:570px; padding:22px; border:0; background:#29251f; box-shadow:0 12px 28px #49392320; }
+.service-layout { grid-template-columns:minmax(0,1fr); gap:18px; }
+.service-main { min-height:410px; padding:34px 40px; background-position:center 55%; }
+.service-main>p { max-width:660px; }
+.service-inclusions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); max-width:720px; column-gap:24px; }
+.service-list { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.service-list article { position:relative; isolation:isolate; overflow:hidden; border:0; background:#29251f; box-shadow:0 12px 28px #49392320; }
 .service-list article::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,#17151172 0%,#17151125 28%,#171511d9 65%,#171511f5 100%); }
 .service-list article>div { display:flex; flex:1; flex-direction:column; justify-content:flex-end; position:static; z-index:auto; }
 .service-list .service-thumb { position:absolute; inset:0; z-index:0; width:100%; height:100%; margin:0; border-radius:0; object-fit:cover; transition:transform .5s ease; }
@@ -202,6 +207,10 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
 .service-list p { color:#f0eae1; line-height:1.52; margin-bottom:16px; }
 .service-list article div>a { width:fit-content; color:#f5cb67; text-decoration-color:#f5cb67; }
 .service-list .round-link { position:relative; z-index:2; align-self:flex-end; margin-top:22px; color:#1d1a15; }
+.service-list article { min-height:600px; padding:26px; }
+.service-list h3 { font-size:30px; }
+.service-list p { font-size:16px; }
+.service-list article div>a { font-size:15px; }
 
 /* Give the 3D diagram its own clear labels and a separate footer. */
 .engineering { overflow:clip; }
@@ -212,14 +221,23 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
 .engineering .model-legend span { display:inline-flex; align-items:center; gap:6px; background:none; }
 .engineering .scheme-note { left:24px; right:24px; bottom:19px; font-size:11px; color:#d8d1c4; }
 @media(max-width:1150px) {
- .service-list article { min-height:520px; }
+ .service-main { min-height:410px; }
+ .service-list article { min-height:570px; }
+}
+@media(max-width:1000px) {
+ .service-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .service-list article:last-child { grid-column:1/-1; min-height:420px; }
 }
 @media(max-width:800px) {
+ .service-list { grid-template-columns:1fr; }
+ .service-list article:last-child { grid-column:auto; }
  .service-list article { min-height:450px; }
  .engineering .model-stage { min-height:460px; }
 }
 @media(max-width:600px) {
- .service-list article { min-height:430px; padding:22px; }
+ .service-main { min-height:0; padding:26px; }
+ .service-inclusions { grid-template-columns:1fr; }
+ .service-list article,.service-list article:last-child { min-height:430px; padding:22px; }
  .service-list h3 { font-size:30px; }
  .service-list p { font-size:16px; }
  .engineering .model-stage { min-height:410px; padding:42px 12px 110px; }
