@@ -99,12 +99,18 @@ h1,h2,h3,.serif,.hero-title-serif { font-family:var(--sans); font-weight:800; fo
 .trust-list h3 { font-size:25px; font-weight:800; }
 .trust-list p { font-size:16px; color:#665b4e; }
 .steps { gap:12px; }
-.steps article { background:#f0e5d4; border:0; border-radius:18px; padding:24px 20px; }
-.steps article:last-child { border-radius:18px; }
+.steps article,.steps article:first-child,.steps article:last-child { background:#f0e5d4; border:0; border-radius:18px; padding:24px 20px; }
+.steps article:last-child { border-radius:18px; background:var(--accent); }
 .steps article>span { font-weight:800; color:#a27932; }
 .steps h3 { font-weight:800; }
 .steps p { font-size:15px; }
 .steps small { font-size:9px; }
+@media(min-width:801px) {
+ .steps article { display:flex; flex-direction:column; min-height:340px; }
+ .steps h3 { margin-top:22px; min-height:56px; }
+ .steps p { min-height:0; max-width:none; margin-top:14px; }
+ .steps small { margin-top:auto; padding-top:28px; }
+}
 .faq-list details { border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:10px; background:#fffdf8; }
 .faq-list summary { font-weight:750; font-size:17px; }
 .faq-list details p { font-size:16px; }
