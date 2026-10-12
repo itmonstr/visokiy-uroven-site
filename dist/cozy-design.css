@@ -298,7 +298,13 @@ h1,h2,h3,.serif,.hero .hero-title-serif,
  .service-list article,.service-list article:last-child { min-height:430px; padding:22px; }
  .service-list h3 { font-size:30px; }
  .service-list p { font-size:16px; }
- .engineering .model-stage { min-height:410px; padding:42px 12px 110px; }
+ .engineering .model-stage { min-height:460px; padding:110px 12px 110px; }
+ .engineering .model-stage[data-mode=all] .base { transform:translate3d(-15px,-12px,80px); }
+ .engineering .model-stage[data-mode=all] .acoustic { transform:translate3d(0,0,15px); }
+ .engineering .model-stage[data-mode=all] .finish { transform:translate3d(15px,12px,-45px); }
+ .engineering .model-stage[data-mode=sound] .base,
+ .engineering .model-stage[data-mode=light] .base { transform:translate3d(-20px,-18px,100px); }
+ .engineering .model-stage[data-mode=sound] .finish { transform:translate3d(20px,18px,-75px); }
  .engineering .model-stage::before { top:15px; left:14px; font-size:9px; }
  .engineering .model-index { display:none; }
  .engineering .model-legend { left:12px; right:12px; bottom:59px; gap:7px 10px; font-size:10px; }
