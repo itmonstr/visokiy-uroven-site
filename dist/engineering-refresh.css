@@ -12,12 +12,14 @@
 .model-stage { min-height: 430px; margin: 10px 0; padding: 20px; background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.13); border-radius: 3px; }
 .model-stage::before { content: 'СЛОИ / СЦЕНАРИИ / КОМФОРТ'; position: absolute; left: 20px; bottom: 22px; color: rgba(240,209,120,.72); font-size: 8px; letter-spacing: .18em; }
 /* Keep the model free of filters: they flatten its preserve-3d layers. */
-.ceiling-model { animation: engineering-orbit 9s ease-in-out infinite; }
+.ceiling-model { animation: engineering-orbit 12s ease-in-out infinite; will-change:transform; -webkit-transform-style:preserve-3d; transform-style:preserve-3d; }
 @keyframes engineering-orbit {
-  0%, 100% { transform: rotateX(52deg) rotateZ(-37deg); }
-  50% { transform: rotateX(60deg) rotateZ(-27deg); }
+  0%, 100% { transform: rotateX(54deg) rotateZ(-34deg) translate3d(0,0,0); }
+  50% { transform: rotateX(54deg) rotateZ(-34deg) translate3d(0,-8px,0); }
 }
-.plane { box-shadow: 10px 14px 22px rgba(0,0,0,.28), 8px 9px 0 rgba(0,0,0,.16); }
+.plane { -webkit-backface-visibility:hidden; backface-visibility:hidden; transform-style:flat; will-change:transform,opacity; box-shadow: 10px 14px 22px rgba(0,0,0,.28), 8px 9px 0 rgba(0,0,0,.16); }
+.acoustic { background:linear-gradient(135deg,#c4b28e,#ac956f); }
+.shadow { filter:none; background:radial-gradient(ellipse,#0005,transparent 70%); box-shadow:none; }
 .finish { box-shadow: 12px 18px 28px rgba(0,0,0,.25), 9px 9px 0 #b9b6aa; }
 .model-stage[data-mode=all] .base { transform: translate3d(-28px,-25px,105px); }
 .model-stage[data-mode=all] .acoustic { transform: translate3d(0,0,22px); }
