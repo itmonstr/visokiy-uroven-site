@@ -260,6 +260,91 @@
   #lead-form { padding: 20px !important; }
   .footer { padding-top: 34px !important; }
 }
+
+/* Mobile composition: keep photography close to its heading, without
+   decorative paths running through controls or copy. */
+@media (max-width: 600px) {
+  #light-details .light-ambient-swoop,
+  #engineering .eng-ambient-swoop,
+  #sound-details .sound-watermark-tr,
+  #sound-details .sound-watermark-br {
+    display: none !important;
+  }
+
+  #light-details .light-layout-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
+  #light-details .light-copy-col { display: contents !important; }
+  #light-details .light-hero-title { order: 1; }
+  #light-details .light-hero-desc { order: 2; }
+  #light-details .light-arch-col {
+    order: 3;
+    height: 210px !important;
+    margin: 3px 0 19px !important;
+  }
+  #light-details .light-arch-frame,
+  #light-details .light-arch-img {
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+  #light-details .light-arch-frame,
+  #light-details .light-arch-frame::before {
+    border-top-left-radius: 82px !important;
+  }
+  #light-details .light-arch-img { object-position: center 42%; }
+  #light-details .light-mood-console { order: 4; margin-bottom: 0 !important; }
+  #light-details .console-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #light-details .console-label { letter-spacing: .12em; line-height: 1.35; }
+  #light-details .light-cta-row { order: 5; }
+
+  #sound-details.sound-mockup-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
+  #sound-details .sound-copy-col { display: contents !important; }
+  #sound-details .sound-top-bar { order: 1; }
+  #sound-details .sound-hero-title { order: 2; }
+  #sound-details .sound-hero-desc { order: 3; }
+  #sound-details .sound-visual-col {
+    order: 4;
+    max-width: none !important;
+    margin: 3px 0 18px !important;
+  }
+  #sound-details .sound-visual-wrap { max-width: none !important; }
+  #sound-details .sound-stage-img {
+    width: 100% !important;
+    height: 245px !important;
+    object-fit: cover !important;
+    object-position: center 46% !important;
+    border-radius: 78px 18px 18px 18px;
+  }
+  #sound-details .sound-visual-badge {
+    left: 12px !important;
+    bottom: 10px !important;
+    width: auto !important;
+    max-width: calc(100% - 24px) !important;
+  }
+  #sound-details .sound-cards-grid { order: 5; }
+  #sound-details .sound-scenarios-wrap { order: 6; }
+  #sound-details .sound-cta-row { order: 7; }
+
+  #engineering .eng-layout-grid { gap: 18px !important; }
+  #engineering .eng-hint-text {
+    min-height: 0 !important;
+    margin: 0 0 11px !important;
+  }
+  #engineering .eng-cta-row { margin-top: 0 !important; }
+  #engineering .engineering-stage-col { margin-top: 0 !important; }
+}
 @keyframes hero-mobile-drift {
   from { transform: translate3d(-1.2%, 0, 0) scale(1.07); }
   to { transform: translate3d(1.2%, -1.3%, 0) scale(1.12); }
