@@ -1,0 +1,139 @@
+/* Site-wide text and action palette, taken from the first-screen headline. */
+:root {
+  --site-yellow: #f3cb57;
+  --site-black: #171717;
+  --site-white: #fff;
+  --accent: var(--site-yellow);
+  --gold: var(--site-yellow);
+}
+
+/* Use only white, black and the brand yellow for visible copy. */
+:is(.header, .hero, .hero-mobile-facts, .promise-bar, #services, .scope,
+    #light-details, #engineering, #projects, #approach, .faq, #contact, .footer)
+  :is(h1, h2, h3, p, span, strong, small, li, a, button, summary, label, legend, time) {
+  color: var(--site-white) !important;
+}
+
+:is(.company-intro, #ceiling-details, #sound-details, .process)
+  :is(h1, h2, h3, p, span, strong, small, li, a, button, summary, label, legend, time) {
+  color: var(--site-black) !important;
+}
+
+/* Consistent yellow accents, including all service-detail headings. */
+:is(.hero .hero-title-line, .hero .hero-title-line *, .hero .eyebrow,
+    .hero-mobile-facts strong, .promise-bar div > span,
+    #services .eyebrow, #services h2 .serif, #services .service-number,
+    #services .service-list article div > a, #services .service-link,
+    .scope .eyebrow, .scope h2 .serif, .scope .scope-lists article > span,
+    #light-details .light-title-serif, #light-details .console-label,
+    #light-details .light-top-tag, #light-details .light-bottom-tag,
+    #engineering .eng-title-serif, #engineering .eng-top-tag,
+    #engineering .eng-stage-tag, #engineering .callout-num,
+    #projects .eyebrow, #projects h2 .serif, #projects .project-label,
+    #projects .project-cta .text-link,
+    #approach .eyebrow, #approach .trust-title-gold,
+    #approach .trust-stat-number, #approach .trust-stat-number sup,
+    #approach .trust-card-num-box,
+    .faq .eyebrow, .faq h2 .serif, .faq summary span,
+    #contact .eyebrow, #contact h2 .serif, #contact .contact-phone,
+    .footer .footer-label,
+    #sound-details .sound-title-gold,
+    .process .eyebrow, .process h2 .serif) {
+  color: var(--site-yellow) !important;
+}
+
+#ceiling-details .solution-copy h2 span.serif {
+  color: var(--site-yellow) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--site-yellow) !important;
+}
+
+#light-details .light-title-serif,
+#engineering .eng-title-serif {
+  background: none !important;
+  -webkit-text-fill-color: var(--site-yellow) !important;
+}
+
+/* Every filled call-to-action uses the exact same yellow. */
+:is(.hero .button.primary, .company-intro .text-link,
+    #ceiling-details .solution-copy .text-link,
+    #light-details .light-primary-btn,
+    #sound-details .sound-primary-cta,
+    #engineering .eng-primary-btn,
+    #projects .project-filters button.active,
+    #contact .button.primary,
+    #services .round-link,
+    #sound-details .sound-pill.active,
+    .mobile-cta) {
+  background: var(--site-yellow) !important;
+  background-image: none !important;
+  border-color: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+}
+
+:is(.hero .button.primary, .company-intro .text-link,
+    #ceiling-details .solution-copy .text-link,
+    #light-details .light-primary-btn,
+    #sound-details .sound-primary-cta,
+    #engineering .eng-primary-btn,
+    #projects .project-filters button.active,
+    #contact .button.primary,
+    #services .round-link,
+    #sound-details .sound-pill.active,
+    .mobile-cta) :is(span, strong, small, svg) {
+  color: var(--site-black) !important;
+}
+
+:is(#light-details .mood-btn.active, #engineering .eng-tab-btn.active,
+    #sound-details .sound-card-active) {
+  border-color: var(--site-yellow) !important;
+}
+
+:is(#light-details .mood-badge-check, #engineering .eng-badge-check,
+    #sound-details .sound-visual-badge-icon,
+    .process .steps article > span) {
+  background: var(--site-yellow) !important;
+  background-image: none !important;
+  color: var(--site-black) !important;
+}
+
+#ceiling-details .material-tags li:is(:first-child, :nth-child(5)) {
+  background: var(--site-yellow) !important;
+  border-color: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+}
+
+/* Keep text on photos, yellow controls and form fields legible. */
+.company-intro .intro-image > span,
+#ceiling-details .solution-photo > span,
+#projects .project :is(h3, strong, small, span),
+#projects .archive-project span {
+  color: var(--site-white) !important;
+}
+
+#contact :is(input, textarea) {
+  color: var(--site-white) !important;
+}
+#contact :is(input, textarea)::placeholder {
+  color: var(--site-white) !important;
+  opacity: 1;
+}
+#contact .service-options input:checked + span {
+  background: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+  border-color: var(--site-yellow) !important;
+}
+#contact .service-options input:not(:checked) + span { color: var(--site-white) !important; }
+
+.process .steps article:last-child,
+.process .steps article:last-child :is(h3, p, small, span) {
+  color: var(--site-black) !important;
+}
+
+#sound-details .sound-cards-grid::before,
+.process .steps::before {
+  color: var(--site-black) !important;
+}
+#projects .portfolio-archive::before {
+  color: var(--site-yellow) !important;
+}
