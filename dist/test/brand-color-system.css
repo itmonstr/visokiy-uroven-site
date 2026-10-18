@@ -137,3 +137,28 @@
 #projects .portfolio-archive::before {
   color: var(--site-yellow) !important;
 }
+
+/* The brand yellow is readable on charcoal, but not directly on white. */
+#ceiling-details .solution-copy h2 span.serif {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: .08em;
+  padding: .04em .16em .1em;
+  border-radius: 5px;
+  background: var(--site-black) !important;
+  color: var(--site-yellow) !important;
+  -webkit-text-fill-color: var(--site-yellow) !important;
+}
+
+#main #sound-details .sound-title-gold,
+#main .process h2 .serif,
+#main .process .eyebrow {
+  color: var(--site-black) !important;
+  -webkit-text-fill-color: var(--site-black) !important;
+}
+
+/* The image label sits on a charcoal overlay, not on the white section. */
+#main .company-intro .intro-image > span {
+  color: var(--site-white) !important;
+  -webkit-text-fill-color: var(--site-white) !important;
+}

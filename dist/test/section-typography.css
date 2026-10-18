@@ -6,9 +6,9 @@
   font-family: var(--sans) !important;
   font-size: clamp(36px, 4.1vw, 58px) !important;
   font-style: normal !important;
-  font-weight: 750 !important;
-  letter-spacing: -.045em !important;
-  line-height: 1.1 !important;
+  font-weight: 650 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.16 !important;
 }
 
 #ceiling-details .solution-copy h2 span,
@@ -52,4 +52,12 @@
   #engineering .eng-hero-title {
     font-size: clamp(30px, 8.7vw, 36px) !important;
   }
+}
+
+/* Large section titles need a calmer weight than the hero headline. */
+#main section h2,
+#main section h3 {
+  font-weight: 650 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.16 !important;
 }
