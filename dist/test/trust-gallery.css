@@ -9,8 +9,11 @@
   max-width: 100% !important;
   margin: 0 !important;
   padding: clamp(65px, 6.5vw, 100px) max(5.2vw, 28px) clamp(65px, 6.5vw, 100px) !important;
-  background-color: #0d0f0c !important;
-  background-image: url('assets/trust-bg-pattern.svg') !important;
+  background-color: #11120f !important;
+  background-image:
+    radial-gradient(ellipse 52% 68% at 48% 43%, rgba(135, 105, 55, 0.13), transparent 78%),
+    radial-gradient(ellipse 42% 60% at 4% 100%, rgba(74, 62, 41, 0.12), transparent 82%),
+    linear-gradient(135deg, #1c1b17 0%, #11120f 58%, #17150f 100%) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center top !important;
@@ -55,10 +58,7 @@
 }
 
 .trust-track-line {
-  flex: 1 1 auto !important;
-  height: 1px !important;
-  background: linear-gradient(90deg, rgba(223, 183, 108, 0.75) 0%, rgba(223, 183, 108, 0.25) 85%, transparent 100%) !important;
-  min-width: 40px !important;
+  display: none !important;
 }
 
 .trust-top-copy {
