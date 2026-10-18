@@ -27,9 +27,17 @@
   filter: none !important;
 }
 
-#ceiling-details .solution-copy h2 span,
 #sound-details .sound-title-gold {
   color: #9c7423 !important;
+}
+
+/* The ceiling headline echoes the warm yellow range of the first screen. */
+#ceiling-details .solution-copy h2 span.serif {
+  color: #b7841b !important;
+  background: linear-gradient(110deg, #b7841b 0%, #edbd37 52%, #ab7812 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 #light-details .light-title-serif,
