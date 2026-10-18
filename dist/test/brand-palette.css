@@ -1,0 +1,32 @@
+/* Brand palette: white, logo yellow and black. */
+:root{
+  --paper:#fffdf8;
+  --ink:#111111;
+  --muted:#666666;
+  --accent:#f2c94c;
+  --line:#dedbd2;
+}
+body{background:var(--paper);color:var(--ink)}
+.header,.hero-copy{background-color:var(--paper)}
+.hero-copy{background-image:radial-gradient(ellipse at 0 40%,#ffffff 0%,var(--paper) 75%)}
+.primary,.button.primary{background:var(--accent);color:#111}
+.primary:hover,.button.primary:hover{background:#ffd967;color:#111}
+.live-dot,.caption-dot{background:var(--accent)}
+.title-square{background:var(--accent)}
+.hero-offers li>span,.service-link,.text-link:hover,.eyebrow{color:#111}
+.floating-seal{background:#fffdf8e8;color:#111}
+.promise-bar,.service-list article,.hero-offers li{border-color:var(--line)}
+.service-main{background-color:#111;color:#fff}
+.service-inclusions li:before{color:var(--accent)}
+.service-main .service-link{color:var(--accent)}
+.round-link:hover{background:var(--accent);color:#111}
+.services{background:#f6f3ea}
+.engineering{background:#111;color:#fff}
+.engineering .eyebrow,.engineering-copy>p:not(.eyebrow),.scheme-note{color:#d7d7d0}
+.layer-tabs button.active,.light-scenarios button.active{border-color:#d1aa22;background:#f2c94c33;color:#111}
+.warranty-stamp{color:var(--accent)}
+.mobile-cta{background:var(--accent);color:#111}
+.hero .photo-caption .caption-dot{background:var(--accent)}
+@media(prefers-contrast:more){
+  :root{--accent:#e5b400;--line:#bcb9af}
+}

@@ -1,0 +1,186 @@
+/* Mobile rhythm: retain every section, but give secondary card groups their own swipe space. */
+@media (max-width: 600px) {
+  .section { padding-top: 38px; padding-bottom: 38px; }
+  .section-top, .heading-row { margin-bottom: 18px; }
+  .section h2 { line-height: 1.08; }
+
+  .hero-copy { padding-top: 28px !important; padding-bottom: 30px !important; }
+  .hero h1 { margin-block: 15px !important; }
+  .hero-offers { margin-top: 16px !important; }
+  .hero-actions { margin-top: 17px !important; }
+  .promise-bar { padding: 17px 20px !important; gap: 12px !important; }
+
+  .company-intro { gap: 17px !important; padding: 34px 20px !important; }
+  .intro-copy h2 { margin-block: 10px 12px !important; }
+  .intro-copy > p:not(.eyebrow) { margin-block: 9px !important; line-height: 1.48 !important; }
+  .intro-audiences { margin-top: 13px !important; }
+  .intro-audiences > div { padding: 11px !important; }
+  .company-intro .text-link { margin-top: 12px !important; }
+  .intro-image { height: 205px !important; }
+
+  .services { padding-top: 38px !important; padding-bottom: 38px !important; }
+  .service-main { padding: 22px !important; }
+  .service-list article, .service-list article:last-child { min-height: 400px !important; }
+
+  .scope { padding: 38px 20px !important; gap: 12px !important; }
+  .scope-heading { max-width: 100%; }
+  .scope-heading h2 { margin-block: 12px !important; }
+  .scope-lists, .trust-list, .steps, .portfolio-archive {
+    position: relative;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: calc(100% + 20px) !important;
+    padding: 27px 20px 10px 0 !important;
+    margin-top: 14px !important;
+    gap: 10px !important;
+  }
+  .scope-lists::-webkit-scrollbar, .trust-list::-webkit-scrollbar,
+  .steps::-webkit-scrollbar, .portfolio-archive::-webkit-scrollbar { display: none; }
+  .scope-lists::before, .trust-list::before, .steps::before, .portfolio-archive::before {
+    content: 'ЛИСТАЙТЕ КАРТОЧКИ  →';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: max-content;
+    height: 15px;
+    background: none !important;
+    color: #9c7728;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    line-height: 15px;
+    pointer-events: none;
+  }
+  .scope-lists article, .scope-lists article:last-child {
+    flex: 0 0 min(78vw, 295px) !important;
+    min-height: 0 !important;
+    width: auto !important;
+    padding: 17px !important;
+    scroll-snap-align: start;
+  }
+  .scope-lists ul { margin-top: 10px !important; }
+  .scope-lists li { font-size: 13px !important; line-height: 1.38 !important; padding-block: 5px !important; }
+
+  .solution-panel, .solution-panel.reverse { padding: 34px 16px !important; gap: 17px !important; }
+  .solution-photo { height: 205px !important; }
+  .solution-copy h2 { margin-bottom: 12px !important; }
+  .solution-copy > p { line-height: 1.48 !important; margin-bottom: 12px !important; }
+  .material-tags { gap: 6px !important; margin-block: 13px !important; }
+  .material-tags li { padding: 6px 9px !important; }
+  .solution-promise { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 6px !important; }
+  .solution-promise > span {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    padding: 10px 8px !important;
+    min-width: 0;
+    font-size: 10px !important;
+  }
+  .solution-promise > span::before { width: 25px !important; height: 25px !important; }
+  .solution-promise strong { font-size: 14px !important; line-height: 1.15 !important; }
+
+  #light-details.light-mockup-section, #sound-details.sound-mockup-section { padding: 34px 16px !important; }
+  #sound-details.sound-mockup-section { grid-template-columns: minmax(0, 1fr) !important; }
+  .light-hero-desc, .sound-hero-desc { margin-bottom: 14px !important; }
+  .light-mood-console { padding: 12px !important; }
+  .mood-btn { padding: 8px 5px !important; }
+  .mood-experience-card { padding: 12px !important; margin-top: 10px !important; }
+  .light-cta-row, .sound-cta-row { gap: 9px !important; margin-top: 14px !important; }
+  .light-arch-frame, .light-arch-img { min-height: 255px !important; height: 255px !important; }
+  .sound-visual-col { max-width: 285px !important; width: 100% !important; margin-inline: auto !important; }
+  .sound-copy-col { width: 100% !important; min-width: 0 !important; }
+  .sound-cards-grid { gap: 8px !important; }
+  .sound-cards-grid {
+    position: relative;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: calc(100% + 16px) !important;
+    padding: 26px 16px 10px 0 !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sound-cards-grid::-webkit-scrollbar { display: none; }
+  .sound-cards-grid::before {
+    content: 'СРАВНИТЕ ДВЕ СИСТЕМЫ  →';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    color: #9c7728;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .1em;
+  }
+  .sound-card {
+    flex: 0 0 min(78vw, 295px) !important;
+    width: auto !important;
+    padding: 12px !important;
+    scroll-snap-align: start;
+  }
+  .sound-card-text { margin-block: 9px !important; line-height: 1.4 !important; }
+  .sound-card-divider { margin-block: 9px !important; }
+  .sound-card-specs { gap: 6px !important; }
+
+  .engineering { padding: 36px 20px !important; }
+  .eng-hero-title { margin-block: 12px !important; }
+  .eng-layer-tabs { margin-top: 13px !important; }
+  .eng-stage-box { padding: 12px !important; }
+  .eng-stage-col { margin-top: 18px !important; }
+  .eng-model-img { max-width: 245px !important; }
+  .eng-cta-row { margin-top: 16px !important; gap: 9px !important; }
+
+  .projects { padding-block: 38px !important; }
+  .archive-heading { margin-top: 20px !important; }
+  .portfolio-archive .archive-project { flex: 0 0 min(43vw, 170px) !important; scroll-snap-align: start; }
+  .project-cta { margin-top: 18px !important; }
+
+  .approach { padding: 38px 20px !important; }
+  .trust-layout { gap: 14px !important; }
+  .trust-intro { margin-block: 12px !important; }
+  .company-stats { margin-top: 14px !important; }
+  .trust-list { width: calc(100% + 20px) !important; }
+  .trust-list article {
+    flex: 0 0 min(78vw, 295px) !important;
+    min-height: 260px !important;
+    margin: 0 !important;
+    padding: 17px 15px 70px !important;
+    scroll-snap-align: start;
+  }
+  .trust-list article:after { height: 58px !important; }
+  .trust-list h3 { font-size: 20px !important; margin-bottom: 6px !important; }
+  .trust-list p { font-size: 13px !important; line-height: 1.42 !important; }
+  .warranty-stamp { margin-top: 10px !important; }
+
+  .process { padding: 38px 20px !important; }
+  .process .heading-row { margin-top: 10px !important; }
+  .process .heading-row > p { margin-top: 9px !important; }
+  .steps { margin-top: 14px !important; }
+  .steps::before { display: block !important; }
+  .steps article, .steps article:first-child, .steps article:last-child {
+    flex: 0 0 min(78vw, 285px) !important;
+    min-height: 210px !important;
+    width: auto !important;
+    padding: 16px !important;
+    scroll-snap-align: start;
+  }
+  .steps h3 { font-size: 19px !important; }
+  .steps p { font-size: 13px !important; line-height: 1.4 !important; }
+  .steps small { padding-top: 6px !important; }
+
+  .faq { padding: 38px 20px !important; }
+  .faq-list details { margin-bottom: 8px !important; }
+  .contact { padding: 40px 20px !important; gap: 20px !important; }
+  .contact-copy h2 { margin-block: 12px !important; }
+  #lead-form { padding: 20px !important; }
+  .footer { padding-top: 34px !important; }
+}
