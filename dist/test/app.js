@@ -81,7 +81,7 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
 const moodScenarios = {
   morning: {
     title: 'Режим «Утро» — бодрость и энергия',
-    desc: 'Мягкое пробуждение с естественным спектром света. Помогает проснуться, активизирует биоритмы и дарит заряд энергии на весь день.',
+    desc: 'Мягкий свет для спокойного пробуждения.',
     tags: [
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.93 4.93l1.8 1.8M17.27 17.27l1.8 1.8M4.93 19.07l1.8-1.8M17.27 6.73l1.8-1.8"/></svg>', label: 'Мягкий подъем' },
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>', label: 'Бодрость и тонус' },
@@ -90,7 +90,7 @@ const moodScenarios = {
   },
   day: {
     title: 'Режим «День» — естественный ритм',
-    desc: 'Равномерный и яркий свет для работы, приготовления пищи и активного дня. Подходит для создания комфортного освещения в гостиной, кухне или офисе.',
+    desc: 'Ровный свет для работы, кухни и повседневных дел.',
     tags: [
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>', label: 'Комфорт для глаз' },
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>', label: 'Яркое освещение' },
@@ -99,7 +99,7 @@ const moodScenarios = {
   },
   evening: {
     title: 'Режим «Вечер» — тёплая атмосфера',
-    desc: 'Приглушённое тёплое освещение без слепящего эффекта. Создаёт расслабляющую обстановку для отдыха, общения с семьёй или просмотра кино.',
+    desc: 'Приглушённый тёплый свет для отдыха и кино.',
     tags: [
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>', label: 'Тёплая атмосфера' },
       { icon: '<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>', label: 'Кино без бликов' },
