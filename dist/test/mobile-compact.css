@@ -277,3 +277,57 @@
   .sound-hero-title > span { font-size: 35px !important; }
   .steps h3 { font-size: 18px !important; }
 }
+
+/* Keep the new trust composition compact and swipeable on phones. */
+@media (max-width: 680px) {
+  .approach { padding: 38px 18px 40px !important; }
+  .trust-top-bar { margin-bottom: 22px !important; }
+  .trust-top-copy { display: none !important; }
+  .trust-eyebrow-tag { font-size: 9px !important; letter-spacing: .14em !important; }
+  .trust-main-grid { display: block !important; }
+  .trust-hero-title { margin-bottom: 10px !important; }
+  .trust-title-white, .trust-title-gold { font-size: clamp(29px, 8vw, 39px) !important; }
+  .trust-hero-desc { margin-bottom: 15px !important; font-size: 13px !important; line-height: 1.5 !important; }
+  .trust-stats-box { flex-direction: row !important; align-items: center !important; gap: 7px !important; padding: 12px 10px !important; }
+  .trust-stat-item { min-width: 0; gap: 7px !important; }
+  .trust-stat-icon { width: 32px !important; height: 32px !important; }
+  .trust-stat-icon svg { width: 17px !important; height: 17px !important; }
+  .trust-stat-number { font-size: 23px !important; }
+  .trust-stat-number sup { font-size: 13px !important; }
+  .trust-stat-label { font-size: 9px !important; line-height: 1.2 !important; white-space: normal !important; }
+  .trust-stats-sep { display: block !important; height: 35px !important; margin: 0 2px !important; flex: 0 0 1px; }
+  .trust-stats-note { margin-bottom: 14px !important; }
+  .trust-feature-card { margin-bottom: 20px !important; }
+  .trust-feature-img { height: 160px !important; aspect-ratio: auto !important; object-position: center 45% !important; }
+  .trust-cards-col {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% + 18px) !important;
+    padding: 0 18px 8px 0 !important;
+  }
+  .trust-cards-col::-webkit-scrollbar { display: none; }
+  .trust-card {
+    flex: 0 0 min(83vw, 300px) !important;
+    min-height: 205px !important;
+    display: grid !important;
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+    align-content: center !important;
+    gap: 8px !important;
+    padding: 16px 14px !important;
+    scroll-snap-align: start;
+    cursor: default !important;
+  }
+  .trust-card-num-box { z-index: 2; padding: 0 !important; align-self: start; }
+  .trust-card-divider, .trust-card-arrow { display: none !important; }
+  .trust-card-content { z-index: 2; padding: 0 !important; }
+  .trust-card-title { font-size: 16px !important; padding: 0 !important; }
+  .trust-card-desc { color: #d4d0c3 !important; font-size: 12px !important; }
+  .trust-card-media { position: absolute !important; inset: 0 0 0 auto; width: 72% !important; height: 100% !important; opacity: .42; }
+  .trust-card-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #141713 5%, #141713d9 42%, transparent); }
+}
