@@ -1,0 +1,47 @@
+/* One heading system for the service-detail sections. */
+#ceiling-details .solution-copy h2,
+#light-details .light-hero-title,
+#sound-details .sound-hero-title,
+#engineering .eng-hero-title {
+  font-family: var(--sans) !important;
+  font-size: clamp(36px, 4.1vw, 58px) !important;
+  font-style: normal !important;
+  font-weight: 750 !important;
+  letter-spacing: -.045em !important;
+  line-height: 1.1 !important;
+}
+
+#ceiling-details .solution-copy h2 span,
+#light-details .light-hero-title span,
+#sound-details .sound-hero-title span,
+#engineering .eng-hero-title span {
+  font-family: var(--sans) !important;
+  font-size: inherit !important;
+  font-style: normal !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+  text-transform: none !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  filter: none !important;
+}
+
+#ceiling-details .solution-copy h2 span,
+#sound-details .sound-title-gold {
+  color: #9c7423 !important;
+}
+
+#light-details .light-title-serif,
+#engineering .eng-title-serif {
+  color: #dfb76c !important;
+}
+
+@media (max-width: 600px) {
+  #ceiling-details .solution-copy h2,
+  #light-details .light-hero-title,
+  #sound-details .sound-hero-title,
+  #engineering .eng-hero-title {
+    font-size: clamp(30px, 8.7vw, 36px) !important;
+  }
+}
