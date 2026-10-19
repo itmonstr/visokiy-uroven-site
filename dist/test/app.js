@@ -200,7 +200,14 @@ iconTextNodes.forEach(node => {
 
 // Soundproofing scenario tabs interactivity
 const soundPills = document.querySelectorAll('.sound-pill');
-const soundCards = document.querySelectorAll('.sound-card');
+const soundSelectionResult = document.querySelector('.sound-selection-result');
+const soundRecommendations = {
+  walls: 'Для стен от соседей подойдёт SoundGuard.',
+  steps: 'Для потолка от шагов сверху подойдёт Tonlos.',
+  bedrooms: 'Для спален и детских подберём систему по типу шума.',
+  pipes: 'Для стояков и коммуникаций подойдёт Tonlos.',
+  mounts: 'Виброподвесы помогают снизить передачу ударного шума.'
+};
 
 soundPills.forEach(pill => {
   pill.addEventListener('click', () => {
@@ -210,12 +217,8 @@ soundPills.forEach(pill => {
     });
     pill.classList.add('active');
     pill.setAttribute('aria-pressed', 'true');
-
-    const tab = pill.dataset.soundTab;
-    if (tab === 'steps' || tab === 'pipes') {
-      soundCards.forEach(c => c.classList.toggle('sound-card-active', c.dataset.soundSystem === 'tonlos'));
-    } else {
-      soundCards.forEach(c => c.classList.toggle('sound-card-active', c.dataset.soundSystem === 'soundguard'));
+    if (soundSelectionResult) {
+      soundSelectionResult.textContent = soundRecommendations[pill.dataset.soundTab] || '';
     }
   });
 });
