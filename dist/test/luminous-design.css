@@ -49,7 +49,7 @@ h1,h2,h3,.serif,.hero .hero-title-serif,.hero h1,.section h2,.trust-layout h2,.c
 .intro-audiences{margin-top:18px;gap:12px}.intro-audiences>div{background:#e5decd;border-left:2px solid #9c7c33;border-radius:0;padding:13px 16px}.intro-audiences strong{font-size:14px}.intro-audiences span{font-size:12px;color:#5d6053}.company-intro .text-link{color:#765b1b;margin-top:16px}
 .services{background:radial-gradient(ellipse at 85% 0,#65522224,transparent 55%),#111310}
 .services h2{margin-bottom:28px}.service-layout{grid-template-columns:minmax(0,1fr);gap:18px}
-.service-main{min-height:340px;padding:30px 36px;border:1px solid #f3cb5750;border-radius:8px;background:linear-gradient(90deg,#14170ff5 0%,#14170fd4 48%,#14170f25),url('assets/original-interior.jpeg') center 55%/cover;color:#fff;box-shadow:inset 0 1px #f3cb5780,0 0 30px #d9ae3420}
+.service-main{min-height:340px;padding:30px 36px;border:1px solid #f3cb5750;border-radius:8px;background:linear-gradient(90deg,#14170ff5 0%,#14170fd4 48%,#14170f25),url('assets/service-interior-wide.png') center 55%/cover;color:#fff;box-shadow:inset 0 1px #f3cb5780,0 0 30px #d9ae3420}
 .service-main h3{font-size:42px;margin:18px 0 16px}.service-main>p{max-width:570px;color:#d6d6c9}.service-main .service-number{color:#e1d8b9}.service-inclusions{max-width:680px;margin-top:16px}.service-inclusions li{color:#d9dacb;font-size:14px;border-color:#ffffff25}.service-link{color:#f3cb57;font-size:14px;margin-top:20px}.arch-object{opacity:.25;right:10%}
 .service-list{gap:18px}.service-list article,.service-list article:first-child,.service-list article:last-child{min-height:480px;padding:25px;border:1px solid #f3cb5733;border-radius:8px;box-shadow:none}
 .service-list article::after{background:linear-gradient(180deg,#11141044,transparent 20%,#111410c9 47%,#111410fa 85%)}
@@ -145,4 +145,9 @@ dialog{background:#1d1b17;color:#f5f3e5;border:1px solid #d4b255}.dialog-copy>p:
 @media(max-width:600px){
  .company-intro,.process{padding:36px 20px}.intro-image{height:260px;min-height:0;width:100%;box-shadow:none}.intro-image>span{font-size:8px;padding:12px;left:12px;right:12px;bottom:16px}.intro-copy h2{font-size:30px}.intro-audiences{gap:10px}.intro-audiences>div{padding:14px 12px}.intro-audiences strong{font-size:13px}.intro-audiences span{font-size:12px}.company-intro .text-link{font-size:13px;padding:14px 16px}
  .steps{gap:12px;margin-top:24px}.steps article,.steps article:first-child,.steps article:last-child{display:grid;grid-template-columns:42px minmax(0,1fr);gap:8px 14px;min-height:0;padding:20px!important}.steps article>span{width:38px;height:38px;font-size:17px;grid-row:1/4}.steps h3{margin:4px 30px 0 0;min-height:0;font-size:21px;grid-column:2}.steps p{grid-column:2;margin:0;font-size:14px}.steps small{grid-column:2;margin-top:5px;padding-top:10px;font-size:8px}.steps article:after{top:23px;right:16px;width:23px;height:23px}.steps article:hover{transform:none}.process .heading-row h2 .serif:after{margin-top:14px;width:70px}
+}
+
+/* The portrait source remains sharp at phone size; desktop uses the wide asset. */
+@media(max-width:600px){
+  .service-main{background-image:linear-gradient(90deg,#14170ff5 0%,#14170fd4 48%,#14170f25),url('assets/original-interior.jpeg')}
 }
