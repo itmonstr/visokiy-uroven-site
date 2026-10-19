@@ -24,7 +24,7 @@
   text-align: center !important;
   text-decoration: none !important;
   text-transform: none !important;
-  transition: transform .2s ease, box-shadow .2s ease !important;
+  transition: background-color .2s ease, border-color .2s ease !important;
 }
 
 #main :is(.hero .button.primary,
@@ -34,8 +34,9 @@
           #sound-details .sound-primary-cta,
           #engineering .eng-primary-btn,
           #contact .button.primary):hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px #00000022 !important;
+  background: #ffe184 !important;
+  border-color: #ffe184 !important;
+  box-shadow: none !important;
 }
 
 #main :is(.hero .button.primary,
@@ -168,6 +169,31 @@
   color: var(--site-black) !important;
   font-size: 13px !important;
   line-height: 1.4 !important;
+}
+
+/* Actions use color and borders for feedback, never luminous or floating shadows. */
+#main#main :is(a, button, summary, .service-options label span),
+#main#main :is(a, button, summary, .service-options label span):is(:hover, :active, :focus-visible),
+#project-dialog :is(a, button),
+#project-dialog :is(a, button):is(:hover, :active, :focus-visible),
+.header .menu-toggle,
+.header .menu-toggle:is(:hover, :active, :focus-visible),
+.mobile-cta,
+.mobile-cta:is(:hover, :active, :focus-visible) {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+#main#main :is(a, button) :is(span, svg, i),
+#project-dialog :is(a, button) :is(span, svg, i) {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+#main#main :is(a, button):not(.project):not(.showcase-card):is(:hover, :active),
+#project-dialog :is(a, button):is(:hover, :active) {
+  transform: none !important;
 }
 
 @media (max-width: 600px) {
