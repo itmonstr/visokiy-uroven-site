@@ -24,9 +24,9 @@
   margin: 42px 0 46px;
 }
 .renovation-heading h2 {
-  font-size: clamp(38px, 4.6vw, 72px);
-  line-height: 1.08;
-  letter-spacing: -.055em;
+  font-size: clamp(36px, 4.2vw, 64px);
+  line-height: 1.16;
+  letter-spacing: -.035em;
 }
 .renovation-heading h2 .serif { color: var(--site-black); }
 .renovation-heading > p { max-width: 370px; color: var(--site-black); font-size: 14px; line-height: 1.8; }
@@ -62,8 +62,17 @@
 
 .renovation-content { padding: clamp(30px, 4vw, 66px); display: flex; flex-direction: column; align-items: flex-start; color: var(--site-white); }
 .renovation-kicker { color: var(--site-yellow); font-size: 10px; font-weight: 700; letter-spacing: .18em; }
-.renovation-content h3 { font-size: clamp(32px, 3.2vw, 49px); line-height: 1.12; margin: 18px 0 32px; }
-.renovation-content h3 span { font-family: var(--serif); font-weight: 400; color: var(--site-yellow); }
+.renovation-content h3 { font-family: var(--sans); font-size: clamp(32px, 3.4vw, 52px); font-weight: 650; line-height: 1.16; letter-spacing: -.035em; margin: 18px 0 32px; }
+.renovation-content h3 span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--site-yellow);
+  background: linear-gradient(105deg, var(--site-yellow) 0%, #ffe184 48%, var(--site-yellow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .renovation-stage { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 18px; padding: 19px 0; border-top: 1px solid var(--site-white); width: 100%; }
 .renovation-stage > span { color: var(--site-yellow); font-size: 11px; padding-top: 3px; }
 .renovation-stage h4 { color: var(--site-white); font-size: 16px; line-height: 1.3; letter-spacing: -.02em; margin: 0 0 8px; }
