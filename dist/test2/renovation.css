@@ -28,7 +28,20 @@
   line-height: 1.16;
   letter-spacing: -.035em;
 }
-.renovation-heading h2 .serif { color: var(--site-black); }
+.renovation-heading h2 .renovation-title-band {
+  display: inline-block;
+  max-width: 100%;
+  padding: .02em .14em .09em;
+  background: var(--site-black);
+  color: var(--site-yellow);
+}
+.renovation-heading h2 .renovation-title-band > span {
+  color: var(--site-yellow);
+  background: linear-gradient(105deg, #e5b400 0%, var(--site-yellow) 38%, #ffe184 68%, #e5b400 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .renovation-heading > p { max-width: 370px; color: var(--site-black); font-size: 14px; line-height: 1.8; }
 
 .renovation-grid {
@@ -68,7 +81,7 @@
   font-size: inherit;
   font-weight: inherit;
   color: var(--site-yellow);
-  background: linear-gradient(105deg, var(--site-yellow) 0%, #ffe184 48%, var(--site-yellow) 100%);
+  background: linear-gradient(105deg, #e5b400 0%, var(--site-yellow) 38%, #ffe184 68%, #e5b400 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
