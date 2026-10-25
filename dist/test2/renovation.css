@@ -33,10 +33,8 @@
   font-weight: 400;
   letter-spacing: -.03em;
   color: var(--site-yellow) !important;
-  background: linear-gradient(105deg, #c99320 0%, var(--site-yellow) 42%, #ffdf7e 72%, #c99320 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: var(--site-yellow) !important;
+  background: none !important;
   display: inline;
 }
 .renovation-heading > p { max-width: 370px; color: var(--site-black); font-size: 14px; line-height: 1.8; }
