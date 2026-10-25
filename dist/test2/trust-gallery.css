@@ -1,0 +1,429 @@
+/* ==========================================================================
+   Trust / Why Us Section: Exact Luxury Architectural Mockup Design
+   Matches obsidian & gold design system, 3D faceted relief & exact mockup icons
+   ========================================================================== */
+
+.approach {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: clamp(65px, 6.5vw, 100px) max(5.2vw, 28px) clamp(65px, 6.5vw, 100px) !important;
+  background-color: #11120f !important;
+  background-image:
+    radial-gradient(ellipse 52% 68% at 48% 43%, rgba(135, 105, 55, 0.13), transparent 78%),
+    radial-gradient(ellipse 42% 60% at 4% 100%, rgba(74, 62, 41, 0.12), transparent 82%),
+    linear-gradient(135deg, #1c1b17 0%, #11120f 58%, #17150f 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  color: #ede8dc !important;
+  border-top: 1px solid #1a1c17 !important;
+  border-bottom: 1px solid #1a1c17 !important;
+  clip-path: none !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide legacy elements */
+.warranty-stamp,
+.trust-gallery {
+  display: none !important;
+}
+
+/* Top Bar */
+.trust-top-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  margin-bottom: clamp(34px, 3.8vw, 50px) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.trust-top-left {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.trust-eyebrow-tag {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  color: #dfb76c !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.trust-track-line {
+  display: none !important;
+}
+
+.trust-top-copy {
+  font-size: 11px !important;
+  color: #8c8e88 !important;
+  letter-spacing: 0.04em !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* Two-column layout grid */
+.trust-main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
+  gap: clamp(36px, 4.5vw, 68px) !important;
+  align-items: stretch !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Left Column */
+.trust-left-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.trust-hero-title {
+  margin: 0 0 16px !important;
+  line-height: 1.08 !important;
+}
+
+.trust-title-white {
+  display: block !important;
+  font-family: var(--sans) !important;
+  font-size: clamp(36px, 4.2vw, 54px) !important;
+  font-weight: 750 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.025em !important;
+}
+
+.trust-title-gold {
+  display: block !important;
+  font-family: var(--sans) !important;
+  font-size: clamp(36px, 4.2vw, 54px) !important;
+  font-weight: 750 !important;
+  color: #dfb76c !important;
+  letter-spacing: -0.02em !important;
+  margin-top: 2px !important;
+}
+
+.trust-hero-desc {
+  font-size: clamp(13px, 1.05vw, 14.5px) !important;
+  line-height: 1.65 !important;
+  color: #9ea099 !important;
+  margin: 0 0 24px !important;
+  max-width: 520px !important;
+}
+
+/* Stats Container (Pill card) */
+.trust-stats-box {
+  background: rgba(22, 25, 21, 0.76) !important;
+  border: 1px solid rgba(223, 183, 108, 0.22) !important;
+  border-radius: 16px !important;
+  padding: 16px 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35) !important;
+}
+
+.trust-stat-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.trust-stat-icon {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  border: 1.2px solid rgba(223, 183, 108, 0.45) !important;
+  background: radial-gradient(circle at 35% 35%, rgba(223, 183, 108, 0.16) 0%, rgba(18, 20, 16, 0.9) 75%) !important;
+  color: #dfb76c !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.trust-stat-icon svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+}
+
+.trust-stat-info {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.trust-stat-number {
+  font-size: 27px !important;
+  font-weight: 800 !important;
+  color: #efcf82 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.trust-stat-number sup {
+  color: #dfb76c !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  margin-left: 2px !important;
+}
+
+.trust-stat-label {
+  font-size: 11px !important;
+  color: #8e908a !important;
+  margin-top: 2px !important;
+  white-space: nowrap !important;
+}
+
+.trust-stats-sep {
+  width: 1px !important;
+  height: 40px !important;
+  background: rgba(223, 183, 108, 0.3) !important;
+  margin: 0 12px !important;
+}
+
+.trust-stats-note {
+  font-size: 10px !important;
+  color: #71736d !important;
+  margin: 0 0 20px !important;
+}
+
+/* Feature photo card */
+.trust-feature-card {
+  position: relative !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(223, 183, 108, 0.25) !important;
+  background: #151714 !important;
+  margin-top: auto !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+}
+
+.trust-feature-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  aspect-ratio: 1284 / 561 !important;
+  object-fit: cover !important;
+  filter: brightness(0.92) contrast(1.04) !important;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.25, 1) !important;
+}
+
+.trust-feature-card:hover .trust-feature-img {
+  transform: scale(1.03) !important;
+}
+
+.trust-feature-badge {
+  position: absolute !important;
+  bottom: 16px !important;
+  left: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  z-index: 2 !important;
+}
+
+.trust-feature-dash {
+  width: 22px !important;
+  height: 2px !important;
+  background: #dfb76c !important;
+}
+
+.trust-feature-text {
+  font-size: 9.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  color: #e5be65 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   Right Column (4 Cards)
+   ========================================================================== */
+.trust-cards-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.trust-card {
+  background: rgba(20, 23, 19, 0.74) !important;
+  border: 1px solid rgba(223, 183, 108, 0.22) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: 58px 1px minmax(0, 1fr) 44px 175px !important;
+  align-items: center !important;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease !important;
+  cursor: default !important;
+  position: relative !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3) !important;
+  padding: 0 !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* First card ambient highlight */
+.trust-card:first-child {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3), 0 0 36px rgba(223, 183, 108, 0.08) !important;
+}
+
+.trust-card:hover {
+  border-color: #dfb76c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 35px rgba(223, 183, 108, 0.16) !important;
+  background: rgba(26, 30, 24, 0.85) !important;
+}
+
+.trust-card-num-box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-left: 10px !important;
+}
+
+.trust-card-num {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #141713 !important;
+  border: 1px solid rgba(223, 183, 108, 0.35) !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 13.5px !important;
+  font-weight: 750 !important;
+  color: #dfb76c !important;
+  letter-spacing: 0.03em !important;
+  user-select: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+.trust-card-divider {
+  width: 1px !important;
+  height: 42px !important;
+  background: linear-gradient(180deg, rgba(223, 183, 108, 0.45) 0%, rgba(223, 183, 108, 0.1) 100%) !important;
+  margin: 0 4px !important;
+}
+
+.trust-card-content {
+  padding: 16px 12px 16px 10px !important;
+}
+
+.trust-card-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 6px !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.trust-card-desc {
+  font-size: 11.5px !important;
+  line-height: 1.5 !important;
+  color: #8e908a !important;
+  margin: 0 !important;
+}
+
+.trust-card-arrow {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(223, 183, 108, 0.35) !important;
+  color: #dfb76c !important;
+  display: grid !important;
+  place-items: center !important;
+  transition: background 0.2s, transform 0.2s, border-color 0.2s !important;
+  margin-right: 6px !important;
+}
+
+.trust-card:hover .trust-card-arrow {
+  background: #dfb76c !important;
+  color: #121410 !important;
+  transform: translateX(3px) !important;
+  border-color: #dfb76c !important;
+}
+
+.trust-card-media {
+  height: 100% !important;
+  min-height: 106px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.trust-card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.25, 1) !important;
+}
+
+.trust-card:hover .trust-card-media img {
+  transform: scale(1.06) !important;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1120px) {
+  .trust-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .trust-card {
+    grid-template-columns: 52px 1px minmax(0, 1fr) 40px 145px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .approach {
+    padding: 45px 18px 40px !important;
+  }
+  .trust-top-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .trust-track-line {
+    width: 100% !important;
+  }
+  .trust-top-copy {
+    font-size: 10px !important;
+  }
+  .trust-card {
+    grid-template-columns: 46px 1px minmax(0, 1fr) 36px 95px !important;
+  }
+  .trust-card-num-box {
+    padding-left: 6px !important;
+  }
+  .trust-card-num {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 12px !important;
+  }
+  .trust-card-title {
+    font-size: 14px !important;
+  }
+  .trust-card-desc {
+    font-size: 11px !important;
+  }
+  .trust-stats-box {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  .trust-stats-sep {
+    display: none !important;
+  }
+}

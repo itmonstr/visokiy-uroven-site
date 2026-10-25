@@ -1,0 +1,249 @@
+/* A restrained, consistent action system across the test page. */
+#main :is(.hero .button.primary,
+          .company-intro .text-link,
+          #ceiling-details .solution-copy .text-link,
+          #light-details .light-primary-btn,
+          #sound-details .sound-primary-cta,
+          #engineering .eng-primary-btn,
+          #contact .button.primary) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-height: 52px !important;
+  padding: 12px 20px !important;
+  border: 1px solid var(--site-yellow) !important;
+  border-radius: 8px !important;
+  background: var(--site-yellow) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: var(--site-black) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  transition: background-color .2s ease, border-color .2s ease !important;
+}
+
+#main :is(.hero .button.primary,
+          .company-intro .text-link,
+          #ceiling-details .solution-copy .text-link,
+          #light-details .light-primary-btn,
+          #sound-details .sound-primary-cta,
+          #engineering .eng-primary-btn,
+          #contact .button.primary):hover {
+  background: #ffe184 !important;
+  border-color: #ffe184 !important;
+  box-shadow: none !important;
+}
+
+#main :is(.hero .button.primary,
+          .company-intro .text-link,
+          #ceiling-details .solution-copy .text-link,
+          #light-details .light-primary-btn,
+          #sound-details .sound-primary-cta,
+          #engineering .eng-primary-btn,
+          #contact .button.primary):is(:focus-visible, :active) {
+  transform: none;
+}
+
+#main :is(.hero .button.primary,
+          .company-intro .text-link,
+          #ceiling-details .solution-copy .text-link,
+          #light-details .light-primary-btn,
+          #sound-details .sound-primary-cta,
+          #engineering .eng-primary-btn,
+          #contact .button.primary) :is(span, strong, small, svg) {
+  color: var(--site-black) !important;
+}
+
+/* Secondary actions are buttons too, but never compete with the primary CTA. */
+#main :is(#services .service-link,
+          #light-details .light-secondary-link,
+          #engineering .eng-secondary-link,
+          #projects .project-cta .text-link,
+          #projects .archive-more) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 48px !important;
+  padding: 11px 16px !important;
+  border: 1px solid #ffffff77 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--site-white) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: border-color .2s ease, background-color .2s ease !important;
+}
+
+#main :is(#services .service-link,
+          #light-details .light-secondary-link,
+          #engineering .eng-secondary-link,
+          #projects .project-cta .text-link,
+          #projects .archive-more):hover {
+  border-color: var(--site-white) !important;
+  background: #ffffff14 !important;
+}
+
+#main :is(#services .service-link,
+          #light-details .light-secondary-link,
+          #engineering .eng-secondary-link,
+          #projects .project-cta .text-link,
+          #projects .archive-more) :is(span, strong, small, svg) {
+  color: var(--site-white) !important;
+}
+
+/* Compact selection controls: one neutral state and one clear selected state. */
+#main :is(#light-details .mood-btn,
+          #engineering .eng-tab-btn) {
+  border: 1px solid #ffffff30 !important;
+  border-radius: 8px !important;
+  background: #1f1f1f !important;
+  box-shadow: none !important;
+  color: var(--site-white) !important;
+}
+
+#main :is(#light-details .mood-btn.active,
+          #engineering .eng-tab-btn.active) {
+  border-color: var(--site-yellow) !important;
+  background: #302b1d !important;
+  box-shadow: none !important;
+}
+
+#main #projects .project-filters button {
+  min-height: 42px !important;
+  border: 1px solid #ffffff55 !important;
+  border-radius: 8px !important;
+  background: #1f1f1f !important;
+  box-shadow: none !important;
+  color: var(--site-white) !important;
+  font-weight: 600 !important;
+}
+
+#main #projects .project-filters button.active {
+  border-color: var(--site-yellow) !important;
+  background: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+}
+
+#main #projects .project-filters button.active :is(span, strong) {
+  color: var(--site-black) !important;
+}
+
+#project-dialog .button.primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 52px !important;
+  padding: 12px 20px !important;
+  border: 1px solid var(--site-yellow) !important;
+  border-radius: 8px !important;
+  background: var(--site-yellow) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: var(--site-black) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  text-align: center !important;
+}
+
+/* Both system descriptions are informational cards, not selectable controls. */
+#main #sound-details .sound-card,
+#main #sound-details .sound-card:hover {
+  transform: none !important;
+  border-color: #e2ddcf !important;
+  box-shadow: 0 4px 16px #0000000a !important;
+  cursor: default !important;
+}
+
+#main #sound-details .sound-selection-result {
+  margin: 10px 0 0 !important;
+  color: var(--site-black) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+/* Actions use color and borders for feedback, never luminous or floating shadows. */
+#main#main :is(a, button, summary, .service-options label span),
+#main#main :is(a, button, summary, .service-options label span):is(:hover, :active, :focus-visible),
+#project-dialog :is(a, button),
+#project-dialog :is(a, button):is(:hover, :active, :focus-visible),
+.header .menu-toggle,
+.header .menu-toggle:is(:hover, :active, :focus-visible),
+.mobile-cta,
+.mobile-cta:is(:hover, :active, :focus-visible) {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+#main#main :is(a, button) :is(span, svg, i),
+#project-dialog :is(a, button) :is(span, svg, i) {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+#main#main :is(a, button):not(.project):not(.showcase-card):is(:hover, :active),
+#project-dialog :is(a, button):is(:hover, :active) {
+  transform: none !important;
+}
+
+@media (max-width: 600px) {
+  .hero-mobile-facts {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    padding: 12px 16px 14px !important;
+    scroll-snap-type: none !important;
+  }
+
+  .hero-mobile-facts > div {
+    min-width: 0 !important;
+    min-height: 86px !important;
+    padding: 11px 8px !important;
+    border: 1px solid #ffffff24 !important;
+    border-top: 2px solid var(--site-yellow) !important;
+    border-radius: 6px !important;
+    background: #25251f !important;
+    scroll-snap-align: none !important;
+  }
+
+  .hero-mobile-facts strong {
+    font-size: clamp(14px, 3.9vw, 17px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-mobile-facts span {
+    font-size: clamp(10px, 2.8vw, 12px) !important;
+    line-height: 1.25 !important;
+  }
+
+  #main :is(.hero .button.primary,
+            .company-intro .text-link,
+            #ceiling-details .solution-copy .text-link,
+            #light-details .light-primary-btn,
+            #sound-details .sound-primary-cta,
+            #engineering .eng-primary-btn,
+            #contact .button.primary) {
+    min-height: 50px !important;
+    padding: 11px 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-mobile-facts { gap: 6px !important; padding-inline: 12px !important; }
+  .hero-mobile-facts > div { padding-inline: 6px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #main :is(a, button) { transition-duration: 0s !important; }
+}

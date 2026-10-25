@@ -1,0 +1,35 @@
+/* Warm interior direction: quiet ivory surfaces, readable type and light as the accent. */
+:root{
+  --paper:#faf7f0;
+  --ink:#211f1a;
+  --muted:#777166;
+  --accent:#e8b84f;
+  --line:#e2dbce;
+}
+body{background:var(--paper);color:var(--ink)}
+.header,.hero-copy{background-color:var(--paper)}
+.hero-copy{background-image:radial-gradient(ellipse at 0 40%,#fffdf8 0%,var(--paper) 76%)}
+.header nav,.header-phone,.button,.text-link,.service-link,.hero-description,.promise-bar div,.intro-copy>p:not(.eyebrow),.service-list p,.aside-copy{color:var(--ink)}
+.hero-description,.service-list p,.aside-copy,.contact-small{color:#716a60}
+.eyebrow,.photo-corner,.footer-label{letter-spacing:.1em}
+.hero h1,.section h2,.trust-layout h2,.contact h2{font-weight:650}
+.hero-title-serif,.serif{font-weight:400}
+.hero-offers strong,.service-inclusions li,.intro-audiences strong,.trust-list h3,.steps h3{font-weight:650}
+.hero-offers small,.intro-audiences span,.trust-list p,.steps p{color:#716a60}
+.service-main{background:linear-gradient(0deg,#27251f 20%,#27251fe8 70%,#27251fad),url('assets/interior-detail.jpg') 50% 40%/cover}
+.services{background:#f1ece2}
+.solution-panel,.scope-lists article,.trust-list article,.steps article{border-color:var(--line)}
+.material-tags li,.light-scenarios button{background:#f4efe6;border-color:#ddd4c5}
+.floating-seal{background:#fffaf1e8;border-color:#fffdf8aa}
+.button.primary{background:var(--accent)}
+.engineering{background:#27251f}
+.engineering .eyebrow{color:#e8b84f}
+.engineering-copy>p:not(.eyebrow),.scheme-note{color:#d8d1c4}
+.warranty-stamp{color:var(--accent)}
+.footer{background:#27251f}
+.footer,.footer a,.footer p,.footer-brand p{color:#eee7d9}
+.footer .footer-label{color:#c9bfae}
+.footer>div>a,.footer-brand>span,.footer-bottom{color:#f8f3e8}
+.footer a:hover{color:var(--accent)}
+.footer-bottom{border-color:#777064}
+@media(prefers-reduced-motion:reduce){.floating-seal{animation:none}}

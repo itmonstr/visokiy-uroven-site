@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <!-- Facet Gradients for 3D origami/architectural relief -->
+    <linearGradient id="facet-top-left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#21241a" stop-opacity="0.9" />
+      <stop offset="60%" stop-color="#151711" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0d0f0c" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="facet-center-sheen" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#2a2e21" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#1b1e16" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0c0e0b" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="facet-right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181a13" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#090b08" stop-opacity="1" />
+    </linearGradient>
+
+    <linearGradient id="facet-lower-left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191b14" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0a0c09" stop-opacity="1" />
+    </linearGradient>
+
+    <!-- Hairline specular stroke gradients -->
+    <linearGradient id="hairline-gold-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfb76c" stop-opacity="0" />
+      <stop offset="25%" stop-color="#dfb76c" stop-opacity="0.5" />
+      <stop offset="65%" stop-color="#dfb76c" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#dfb76c" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="hairline-gold-sub" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfb76c" stop-opacity="0" />
+      <stop offset="40%" stop-color="#dfb76c" stop-opacity="0.25" />
+      <stop offset="80%" stop-color="#dfb76c" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#dfb76c" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Wave contour stroke gradient -->
+    <linearGradient id="wave-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dfb76c" stop-opacity="0" />
+      <stop offset="30%" stop-color="#dfb76c" stop-opacity="0.22" />
+      <stop offset="65%" stop-color="#dfb76c" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#dfb76c" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Ambient Gold Radial Glows -->
+    <radialGradient id="glow-card1" cx="54%" cy="18%" r="35%">
+      <stop offset="0%" stop-color="#dfb76c" stop-opacity="0.28" />
+      <stop offset="35%" stop-color="#dfb76c" stop-opacity="0.1" />
+      <stop offset="80%" stop-color="#dfb76c" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-left" cx="22%" cy="28%" r="34%">
+      <stop offset="0%" stop-color="#c3963c" stop-opacity="0.16" />
+      <stop offset="50%" stop-color="#c3963c" stop-opacity="0.04" />
+      <stop offset="85%" stop-color="#c3963c" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-bottom" cx="46%" cy="96%" r="30%">
+      <stop offset="0%" stop-color="#dfb76c" stop-opacity="0.2" />
+      <stop offset="55%" stop-color="#dfb76c" stop-opacity="0.04" />
+      <stop offset="85%" stop-color="#dfb76c" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Base Obsidian -->
+  <rect width="1440" height="900" fill="#0d0f0c" />
+
+  <!-- 3D Architectural Facet Polygons -->
+  <!-- Top-left facet plane -->
+  <polygon points="0,0 800,0 640,460 0,390" fill="url(#facet-top-left)" />
+  <!-- Diagonal upper facet cut -->
+  <polygon points="0,0 360,0 640,460 0,220" fill="url(#facet-center-sheen)" opacity="0.35" />
+  <!-- Center triangular facet (light-reflecting fold) -->
+  <polygon points="800,0 640,460 530,900 700,900" fill="url(#facet-center-sheen)" />
+  <!-- Left lower facet under title & stats -->
+  <polygon points="0,390 640,460 530,900 0,900" fill="url(#facet-lower-left)" />
+  <!-- Right upper facet behind cards -->
+  <polygon points="800,0 1440,0 1440,480 640,460" fill="url(#facet-right)" />
+  <!-- Right lower facet -->
+  <polygon points="640,460 1440,480 1440,900 530,900" fill="url(#facet-right)" opacity="0.9" />
+
+  <!-- Specular Facet Hairlines (Fold Traces) -->
+  <line x1="800" y1="0" x2="640" y2="460" stroke="url(#hairline-gold-main)" stroke-width="1.8" />
+  <line x1="640" y1="460" x2="530" y2="900" stroke="url(#hairline-gold-main)" stroke-width="1.5" />
+  <line x1="360" y1="0" x2="640" y2="460" stroke="url(#hairline-gold-sub)" stroke-width="1.2" />
+  <line x1="0" y1="390" x2="640" y2="460" stroke="url(#hairline-gold-sub)" stroke-width="1.2" />
+  <line x1="640" y1="460" x2="1440" y2="480" stroke="url(#hairline-gold-sub)" stroke-width="1.2" />
+  <line x1="0" y1="220" x2="640" y2="460" stroke="url(#hairline-gold-sub)" stroke-width="1" opacity="0.5" />
+
+  <!-- Delicate Curved Ambient Wave Contours (Silk / Sound Waves) -->
+  <path d="M -50,185 C 320,125 540,285 920,215 C 1140,175 1320,245 1500,205" stroke="url(#wave-gold)" stroke-width="1.4" fill="none" />
+  <path d="M -50,265 C 350,215 570,365 960,305 C 1180,265 1340,325 1500,295" stroke="url(#wave-gold)" stroke-width="1.2" fill="none" opacity="0.8" />
+  <path d="M -50,535 C 300,495 520,635 900,575 C 1120,535 1320,615 1500,585" stroke="url(#wave-gold)" stroke-width="1.4" fill="none" opacity="0.9" />
+  <path d="M -50,615 C 330,575 550,715 940,655 C 1160,615 1350,695 1500,665" stroke="url(#wave-gold)" stroke-width="1.2" fill="none" opacity="0.7" />
+
+  <!-- Ambient Spotlights Overlay -->
+  <rect width="1440" height="900" fill="url(#glow-card1)" />
+  <rect width="1440" height="900" fill="url(#glow-left)" />
+  <rect width="1440" height="900" fill="url(#glow-bottom)" />
+</svg>
