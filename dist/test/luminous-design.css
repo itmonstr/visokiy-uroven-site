@@ -151,5 +151,3 @@ dialog{background:#1d1b17;color:#f5f3e5;border:1px solid #d4b255}.dialog-copy>p:
 @media(max-width:600px){
   .service-main{background-image:linear-gradient(90deg,#14170ff5 0%,#14170fd4 48%,#14170f25),url('assets/original-interior.jpeg')}
 }
-
-.hero .hero-title-line { letter-spacing: 0.12em !important; }
