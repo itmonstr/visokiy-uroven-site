@@ -29,8 +29,8 @@
   letter-spacing: -.035em;
 }
 .renovation-heading h2 .serif {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--sans);
+  font-weight: 600;
   letter-spacing: -.03em;
   color: var(--site-yellow) !important;
   -webkit-text-fill-color: var(--site-yellow) !important;
