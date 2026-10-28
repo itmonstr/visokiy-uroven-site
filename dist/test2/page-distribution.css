@@ -1,0 +1,45 @@
+/* Распределение исходных блоков по страницам без изменения дизайн-системы. */
+.home-page .solution-details,
+.home-page .engineering,
+.home-page .renovation,
+.home-page .process,
+.home-page .faq-section { display: none !important; }
+
+.service-page .hero,
+.service-page .hero-mobile-facts,
+.service-page .promise-bar,
+.service-page .company-intro,
+.service-page .services { display: none !important; }
+
+.service-page .solution-details,
+.service-page .renovation { padding-top: clamp(72px, 8vw, 132px); }
+
+.page-potolki #light-details,
+.page-potolki #sound-details,
+.page-potolki .renovation,
+.page-potolki .process,
+.page-potolki .faq-section { display: none !important; }
+
+.page-light #ceiling-details,
+.page-light #sound-details,
+.page-light .engineering,
+.page-light .renovation,
+.page-light .process,
+.page-light .faq-section { display: none !important; }
+
+.page-shumo #ceiling-details,
+.page-shumo #light-details,
+.page-shumo .engineering,
+.page-shumo .renovation,
+.page-shumo .process,
+.page-shumo .faq-section { display: none !important; }
+
+.page-remont .solution-details,
+.page-remont .engineering { display: none !important; }
+
+.service-page .projects { border-top: 1px solid rgba(198, 157, 62, .22); }
+
+@media (max-width: 760px) {
+  .service-page .solution-details,
+  .service-page .renovation { padding-top: 44px; }
+}
