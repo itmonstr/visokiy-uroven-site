@@ -490,3 +490,41 @@
     gap: 10px;
   }
 }
+
+/* Понятная подача блока Шумоизоляции (#sound-details) */
+#sound-details .sound-card-name {
+  font-size: 19px !important;
+  line-height: 1.2 !important;
+}
+#sound-details .sound-benefits-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 22px;
+}
+#sound-details .sound-benefit-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(243, 203, 87, 0.14);
+  border: 1px solid rgba(243, 203, 87, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+#sound-details .sound-benefit-item strong {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--site-black) !important;
+}
+#sound-details .sound-benefit-item span {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--site-black) !important;
+  opacity: 0.78;
+}
+@media (max-width: 760px) {
+  #sound-details .sound-benefits-strip {
+    grid-template-columns: 1fr;
+  }
+}
