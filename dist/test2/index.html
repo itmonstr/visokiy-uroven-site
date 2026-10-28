@@ -7,7 +7,7 @@
   <meta name="description" content="Натяжные потолки, звукоизоляция и освещение в Новороссийске, Анапе и Геленджике. Ремонт под ключ — дополнительная услуга компании «Высокий уровень».">
   <meta name="theme-color" content="#222521">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="content-update.css"><link rel="stylesheet" href="typography.css"><link rel="stylesheet" href="service-photos.css"><link rel="stylesheet" href="hero-refresh.css"><link rel="stylesheet" href="brand-palette.css"><link rel="stylesheet" href="warm-interior.css?v=2"><link rel="stylesheet" href="showcase.css"><link rel="stylesheet" href="trust-gallery.css?v=3"><link rel="stylesheet" href="engineering-refresh.css?v=6"><link rel="stylesheet" href="icon-system.css"><script src="app.js?v=14" defer></script>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="content-update.css"><link rel="stylesheet" href="typography.css"><link rel="stylesheet" href="service-photos.css"><link rel="stylesheet" href="hero-refresh.css"><link rel="stylesheet" href="brand-palette.css"><link rel="stylesheet" href="warm-interior.css?v=2"><link rel="stylesheet" href="showcase.css"><link rel="stylesheet" href="trust-gallery.css?v=3"><link rel="stylesheet" href="engineering-refresh.css?v=6"><link rel="stylesheet" href="icon-system.css"><script src="app.js?v=15" defer></script>
   <link rel="stylesheet" href="cozy-design.css?v=6">
   <link rel="stylesheet" href="luminous-design.css?v=3">
   <link rel="stylesheet" href="service-details-refresh.css?v=7">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="ceiling-focus.css?v=1">
   <link rel="stylesheet" href="renovation.css?v=7">
   <link rel="stylesheet" href="faq-refresh.css?v=2">
-  <link rel="stylesheet" href="home-sales.css?v=8">
+  <link rel="stylesheet" href="home-sales.css?v=9">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержимому</a>
@@ -154,65 +154,53 @@
           <span class="light-title-sans">Освещение</span>
           <span class="light-title-serif">потолков и стен.</span>
         </h2>
-        <p class="light-hero-desc">Встраиваем современное освещение сразу при монтаже потолка — без громоздких люстр и лишних проводов:</p>
+        <p class="light-hero-desc">Нажмите на любой вид освещения — справа на фото покажем, как он выглядит в готовом интерьере:</p>
 
-        <div class="light-cards-grid">
-          <article class="light-feature-card">
-            <div class="light-card-top">
-              <div class="light-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><path d="M8 6v5l-2 3h4l-2-3"/><path d="M16 6v5l-2 3h4l-2-3"/></svg>
-              </div>
-              <div class="light-card-meta">
-                <span>ГИБКИЙ СВЕТ</span>
-                <h3>Магнитные треки</h3>
-              </div>
-            </div>
-            <p>Светильники легко передвигать вдоль шины, поворачивать в нужную сторону и добавлять новые.</p>
-          </article>
+        <div class="light-selector-list" role="tablist" aria-label="Виды освещения">
+          <button type="button" class="light-tab-btn active" data-light-type="lines" aria-selected="true">
+            <span class="light-tab-num">01</span>
+            <span class="light-tab-text">
+              <strong>Световые линии с диммером</strong>
+              <small>Встроенные линии света в потолке и стенах</small>
+            </span>
+            <span class="light-tab-arrow" aria-hidden="true">→</span>
+          </button>
 
-          <article class="light-feature-card">
-            <div class="light-card-top">
-              <div class="light-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 18 20 6"/><path d="M4 12 14 4.5"/><path d="M10 19.5 20 12"/></svg>
-              </div>
-              <div class="light-card-meta">
-                <span>ГЕОМЕТРИЯ И ОБЪЁМ</span>
-                <h3>Световые линии</h3>
-              </div>
-            </div>
-            <p>Непрерывные линии света в потолке и стенах — визуально расширяют комнату и заменяют люстру.</p>
-          </article>
+          <button type="button" class="light-tab-btn" data-light-type="tracks" aria-selected="false">
+            <span class="light-tab-num">02</span>
+            <span class="light-tab-text">
+              <strong>Магнитные и поворотные треки</strong>
+              <small>Светильники двигаются по шине в любую зону</small>
+            </span>
+            <span class="light-tab-arrow" aria-hidden="true">→</span>
+          </button>
 
-          <article class="light-feature-card">
-            <div class="light-card-top">
-              <div class="light-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="15" x2="17" y2="15"/></svg>
-              </div>
-              <div class="light-card-meta">
-                <span>ЭФФЕКТ ДНЕВНОГО НЕБА</span>
-                <h3>Полный засвет</h3>
-              </div>
-            </div>
-            <p>Мягкое равномерное свечение по всей площади потолка без теней и бликов — идеально для ванных и прихожих.</p>
-          </article>
+          <button type="button" class="light-tab-btn" data-light-type="full" aria-selected="false">
+            <span class="light-tab-num">03</span>
+            <span class="light-tab-text">
+              <strong>Потолок с полным засветом</strong>
+              <small>Мягкий равномерный свет по всей площади</small>
+            </span>
+            <span class="light-tab-arrow" aria-hidden="true">→</span>
+          </button>
 
-          <article class="light-feature-card">
-            <div class="light-card-top">
-              <div class="light-card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="3.5"/><path d="M9 16.5h6M10.5 20h3"/></svg>
-              </div>
-              <div class="light-card-meta">
-                <span>АКЦЕНТЫ И УЮТ</span>
-                <h3>Споты и карнизы</h3>
-              </div>
-            </div>
-            <p>Компактные точечные споты («стаканчики») и электрокарнизы со скрытой подсветкой струящихся штор.</p>
-          </article>
-        </div>
+          <button type="button" class="light-tab-btn" data-light-type="spots" aria-selected="false">
+            <span class="light-tab-num">04</span>
+            <span class="light-tab-text">
+              <strong>Точечные споты («стаканчики»)</strong>
+              <small>Компактный основной и акцентный свет</small>
+            </span>
+            <span class="light-tab-arrow" aria-hidden="true">→</span>
+          </button>
 
-        <div class="light-dimmer-bar">
-          <span class="light-dimmer-dot" aria-hidden="true"></span>
-          <p><strong>Диммер яркости и теплоты света:</strong> настраивайте яркий утренний, рабочий дневной или мягкий вечерний свет с пульта.</p>
+          <button type="button" class="light-tab-btn" data-light-type="curtains" aria-selected="false">
+            <span class="light-tab-num">05</span>
+            <span class="light-tab-text">
+              <strong>Электрокарнизы с подсветкой</strong>
+              <small>Скрытая подсветка струящихся штор</small>
+            </span>
+            <span class="light-tab-arrow" aria-hidden="true">→</span>
+          </button>
         </div>
 
         <div class="light-cta-row">
@@ -227,10 +215,15 @@
 
       <div class="light-arch-col">
         <div class="light-arch-frame">
-          <img class="light-arch-img" src="assets/light-clean-interior@2x.jpg" alt="Световые решения в современном интерьере" loading="lazy" width="978" height="1152">
+          <img class="light-arch-img" id="light-arch-img" src="assets/light-clean-interior@2x.jpg" alt="Световые линии с диммером в потолке и стенах" loading="lazy" width="978" height="1152">
           <div class="light-ambient-glow" aria-hidden="true"></div>
           <div class="light-volumetric-wash" aria-hidden="true"></div>
           <div class="light-beam-sweep" id="light-beam-sweep" aria-hidden="true"></div>
+          <div class="light-arch-caption" aria-live="polite">
+            <span class="light-arch-caption-tag" id="light-arch-tag">01 / ЛИНЕЙНЫЙ СВЕТ</span>
+            <strong id="light-arch-title">Световые линии с диммером</strong>
+            <p id="light-arch-desc">Непрерывные полосы света в потолке и стенах визуально расширяют комнату и заменяют обычную люстру. Яркость регулируется с пульта.</p>
+          </div>
         </div>
       </div>
     </div>

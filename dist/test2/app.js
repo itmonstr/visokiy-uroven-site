@@ -222,3 +222,70 @@ soundPills.forEach(pill => {
     }
   });
 });
+
+// Interactive lighting type switcher in #light-details
+const lightTypesData = {
+  lines: {
+    img: 'assets/light-clean-interior@2x.jpg',
+    alt: 'Световые линии с диммером в потолке и стенах',
+    tag: '01 / ЛИНЕЙНЫЙ СВЕТ',
+    title: 'Световые линии с диммером',
+    desc: 'Непрерывные полосы света в потолке и стенах визуально расширяют комнату и заменяют обычную люстру. Яркость регулируется с пульта.'
+  },
+  tracks: {
+    img: 'assets/nsqprq2ihibd3oarxz9hqztudqq7nbe2.jpg',
+    alt: 'Магнитные и поворотные треки в потолке',
+    tag: '02 / ГИБКАЯ ТРЕКОВАЯ СИСТЕМА',
+    title: 'Магнитные и поворотные треки',
+    desc: 'Светильники можно в любой момент передвигать вдоль алюминиевой шины, поворачивать в нужную сторону и добавлять новые.'
+  },
+  full: {
+    img: 'assets/project-light.jpg',
+    alt: 'Потолок с полным засветом в ванной комнате',
+    tag: '03 / ЭФФЕКТ ДНЕВНОГО НЕБА',
+    title: 'Потолок с полным засветом',
+    desc: 'Вся площадь потолка светится мягким, ровным светом без бликов и теней — идеально для ванных, прихожих и кухонь.'
+  },
+  spots: {
+    img: 'assets/project-living.jpg',
+    alt: 'Точечные споты стаканчики на матовом потолке',
+    tag: '04 / ТОЧЕЧНОЕ ОСВЕЩЕНИЕ',
+    title: 'Эксклюзивные споты («стаканчики»)',
+    desc: 'Компактные стильные светильники направленного света — аккуратно выделяют нужные зоны и сочетаются с любым интерьером.'
+  },
+  curtains: {
+    img: 'assets/img-20230224-wa0025.jpg',
+    alt: 'Скрытый карниз и парящая контурная подсветка потолка',
+    tag: '05 / СКРЫТАЯ ПОДСВЕТКА И УЮТ',
+    title: 'Электрокарнизы и ниши с подсветкой',
+    desc: 'Скрытая светодиодная лента мягко подчёркивает струящиеся шторы и создаёт тёплый, расслабляющий вечерний свет.'
+  }
+};
+
+const lightArchImg = document.querySelector('#light-arch-img');
+const lightArchTag = document.querySelector('#light-arch-tag');
+const lightArchTitle = document.querySelector('#light-arch-title');
+const lightArchDesc = document.querySelector('#light-arch-desc');
+
+document.querySelectorAll('[data-light-type]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = lightTypesData[btn.dataset.lightType];
+    if (!item) return;
+    document.querySelectorAll('[data-light-type]').forEach(b => {
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-selected', String(b === btn));
+    });
+    if (lightArchImg) {
+      lightArchImg.style.opacity = '0.35';
+      setTimeout(() => {
+        lightArchImg.src = item.img;
+        lightArchImg.alt = item.alt;
+        lightArchImg.style.opacity = '1';
+      }, 120);
+    }
+    if (lightArchTag) lightArchTag.textContent = item.tag;
+    if (lightArchTitle) lightArchTitle.textContent = item.title;
+    if (lightArchDesc) lightArchDesc.textContent = item.desc;
+    triggerTrackPulse();
+  });
+});
