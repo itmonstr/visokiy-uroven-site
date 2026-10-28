@@ -157,3 +157,78 @@
     padding: 18px;
   }
 }
+
+/* Конкретные виды освещения в блоке #light-details */
+.light-types-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 8px;
+  max-width: 540px;
+}
+.light-types-list li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(243, 203, 87, 0.22);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--site-white);
+}
+.light-types-list li > span {
+  color: var(--site-yellow);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+.light-types-list li strong {
+  color: var(--site-yellow);
+  font-weight: 700;
+}
+.light-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+.light-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  background: var(--site-yellow);
+  color: var(--site-black) !important;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.light-primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Теги конкретных условий в блоке Ремонт под ключ */
+.renovation-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+.renovation-badges li {
+  padding: 7px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(243, 203, 87, 0.38);
+  background: rgba(243, 203, 87, 0.1);
+  color: var(--site-yellow);
+  font-size: 11.5px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
