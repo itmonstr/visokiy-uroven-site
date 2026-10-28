@@ -232,3 +232,152 @@
   font-weight: 650;
   letter-spacing: 0.02em;
 }
+
+/* Наглядные мини-карточки типов потолков в блоке #ceiling-details */
+#ceiling-details.solution-panel {
+  align-items: center !important;
+  gap: clamp(28px, 4vw, 56px) !important;
+}
+#ceiling-details .ceiling-top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+#ceiling-details .ceiling-track-dash {
+  width: 18px;
+  height: 2px;
+  background: var(--site-yellow);
+  border-radius: 1px;
+  display: inline-block;
+}
+#ceiling-details .ceiling-top-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--site-black) !important;
+  opacity: 0.65;
+}
+#ceiling-details .solution-copy h2 {
+  margin: 0 0 10px !important;
+  font-size: clamp(34px, 3.8vw, 50px) !important;
+  line-height: 1.06 !important;
+}
+#ceiling-details .solution-copy > p.ceiling-short-lead {
+  font-size: 14.5px !important;
+  line-height: 1.5 !important;
+  margin: 0 0 20px !important;
+  max-width: 580px !important;
+  opacity: 0.82;
+}
+.ceiling-types-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 22px;
+}
+.ceiling-type-card {
+  background: var(--site-white);
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 6px 20px rgba(23, 23, 23, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.ceiling-type-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--site-yellow);
+  box-shadow: 0 10px 26px rgba(243, 203, 87, 0.2);
+}
+.ceiling-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ceiling-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.ceiling-card-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+  font-size: 11px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.ceiling-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--site-black) !important;
+  margin: 0;
+}
+.ceiling-card-price {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: var(--site-yellow) !important;
+  color: var(--site-black) !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ceiling-card-tags {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--site-black) !important;
+  padding-top: 6px;
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+  line-height: 1.35;
+}
+.ceiling-card-desc {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+  color: var(--site-black) !important;
+  opacity: 0.74;
+  margin: 0 !important;
+}
+.ceiling-bottom-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+}
+.ceiling-bottom-row .text-link {
+  margin-top: 0 !important;
+}
+.ceiling-bottom-facts {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 650;
+  color: var(--site-black) !important;
+  opacity: 0.85;
+}
+.ceiling-bottom-facts svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .ceiling-types-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
