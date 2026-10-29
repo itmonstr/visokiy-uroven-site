@@ -1,0 +1,322 @@
+/* Compact composition below the fold. The hero is intentionally untouched. */
+
+#projects,
+#prices,
+#services,
+#approach,
+#faq,
+#contact {
+  padding-top: clamp(58px, 6vw, 88px);
+  padding-bottom: clamp(58px, 6vw, 88px);
+}
+
+/* Six works are enough for the first scan: four featured + two archive shots. */
+#projects .project-grid {
+  grid-template-rows: 270px 270px 250px;
+}
+#projects .archive-heading {
+  margin-top: 30px;
+}
+#projects .portfolio-archive {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+#projects .archive-project {
+  height: 230px;
+}
+#projects .portfolio-archive.expanded {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+#projects .portfolio-archive.expanded .archive-project {
+  height: 180px;
+}
+
+/* Services stay as navigation, not a second long sales presentation. */
+#services .service-main {
+  min-height: 410px;
+}
+#services .service-main > p {
+  display: none;
+}
+#services .service-main h3 {
+  margin-bottom: 12px;
+}
+#services .service-inclusions li {
+  padding-block: 7px;
+}
+#services .service-list article {
+  padding-block: 20px;
+}
+#services .service-list .service-thumb {
+  width: 160px;
+  height: 150px;
+}
+#services .service-list p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.55;
+}
+
+/* Detailed service blocks retain the useful choices but lose repeated CTAs. */
+.solution-details {
+  padding-bottom: 0;
+}
+.solution-details .solution-panel {
+  padding-top: clamp(52px, 5vw, 76px);
+  padding-bottom: clamp(52px, 5vw, 76px);
+}
+#ceiling-details .ceiling-short-lead,
+#sound-details .sound-hero-desc {
+  max-width: 760px;
+}
+#ceiling-details .ceiling-bottom-row,
+#light-details .light-cta-row,
+#sound-details .sound-cta-row {
+  display: none !important;
+}
+
+/* Repair is an additional service: keep scope and conditions, remove the duplicate poster. */
+#renovation {
+  padding-top: clamp(58px, 6vw, 82px);
+  padding-bottom: clamp(58px, 6vw, 82px);
+}
+#renovation .renovation-grid {
+  grid-template-columns: 1fr;
+  max-width: 980px;
+  margin-inline: auto;
+}
+#renovation .renovation-visual {
+  display: none;
+}
+#renovation .renovation-content {
+  padding: 0;
+}
+#renovation .renovation-stage p {
+  line-height: 1.5;
+}
+
+/* Trust is proof, not another gallery. */
+#approach .trust-main-grid {
+  grid-template-columns: minmax(320px, .72fr) minmax(0, 1.28fr) !important;
+  gap: clamp(30px, 4vw, 64px) !important;
+}
+#approach .trust-feature-card,
+#approach .trust-stats-note {
+  display: none !important;
+}
+#approach .trust-card {
+  grid-template-columns: 54px 1px minmax(0, 1fr) 150px !important;
+}
+#approach .trust-card-arrow {
+  display: none !important;
+}
+#approach .trust-card-media {
+  min-height: 88px !important;
+}
+#approach .trust-card-content {
+  padding-block: 13px !important;
+}
+
+/* FAQ and lead form stay available, but use less vertical space. */
+#faq .faq-intro-copy,
+#faq .faq-answer p {
+  line-height: 1.5;
+}
+#contact .contact-copy > p:not(.eyebrow) {
+  max-width: 470px;
+}
+#contact .contact-phone {
+  margin-top: 28px;
+}
+
+@media (max-width: 800px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  #projects,
+  #prices,
+  #services,
+  #approach,
+  #faq,
+  #contact {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  #projects .project-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-bottom: 7px;
+    scrollbar-width: none;
+  }
+  #projects .project-grid::-webkit-scrollbar { display: none; }
+  #projects .project-grid .project,
+  #projects .project-grid .project-feature,
+  #projects .project-grid .project-wide {
+    flex: 0 0 min(82vw, 330px);
+    width: auto;
+    height: 390px;
+    scroll-snap-align: start;
+  }
+  #projects .archive-heading > span { display: none; }
+  #projects .portfolio-archive,
+  #projects .portfolio-archive.expanded {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  #projects .portfolio-archive::-webkit-scrollbar { display: none; }
+  #projects .archive-project,
+  #projects .portfolio-archive.expanded .archive-project {
+    flex: 0 0 min(43vw, 170px) !important;
+    height: 155px !important;
+    scroll-snap-align: start;
+  }
+
+  #services .service-main {
+    min-height: 350px !important;
+  }
+  #services .service-inclusions li:nth-child(n + 3) {
+    display: none;
+  }
+  #services .service-list article,
+  #services .service-list article:last-child {
+    min-height: 300px !important;
+  }
+
+  .solution-details .solution-panel {
+    padding-top: 36px !important;
+    padding-bottom: 40px !important;
+  }
+  #ceiling-details .solution-photo {
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+  #ceiling-details .solution-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-self: stretch !important;
+    overflow: hidden;
+  }
+  #ceiling-details .ceiling-short-lead,
+  #sound-details .sound-hero-desc {
+    display: none;
+  }
+  #ceiling-details .ceiling-types-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px !important;
+    scrollbar-width: none;
+  }
+  #ceiling-details .ceiling-types-grid::-webkit-scrollbar { display: none; }
+  #ceiling-details .ceiling-type-card {
+    flex: 0 0 min(78vw, 290px);
+    min-height: 205px;
+    scroll-snap-align: start;
+  }
+
+  #light-details .light-hero-desc {
+    display: none;
+  }
+  #light-details .light-selector-list {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 9px;
+    margin-bottom: 0;
+    scrollbar-width: none;
+  }
+  #light-details .light-selector-list::-webkit-scrollbar { display: none; }
+  #light-details .light-tab-btn {
+    flex: 0 0 min(76vw, 280px);
+    scroll-snap-align: start;
+  }
+  #light-details .light-arch-col,
+  #light-details .light-arch-frame,
+  #light-details .light-arch-img {
+    height: 190px !important;
+    min-height: 190px !important;
+  }
+  #light-details .light-arch-caption p {
+    display: none;
+  }
+
+  #sound-details .sound-stage-img {
+    height: 210px !important;
+  }
+  #sound-details .sound-benefits-strip {
+    display: none !important;
+  }
+  #sound-details .sound-card {
+    min-height: 250px !important;
+  }
+
+  #renovation {
+    padding: 42px 20px !important;
+  }
+  #renovation .renovation-top > span,
+  #renovation .renovation-heading > p,
+  #renovation .renovation-kicker,
+  #renovation .renovation-stage p {
+    display: none;
+  }
+  #renovation .renovation-heading {
+    margin-bottom: 22px;
+  }
+  #renovation .renovation-stage {
+    padding-block: 13px;
+  }
+  #renovation .renovation-badges {
+    margin-top: 16px;
+  }
+
+  #approach .trust-main-grid {
+    display: block !important;
+  }
+  #approach .trust-cards-col {
+    margin-top: 18px;
+  }
+  #approach .trust-card {
+    min-height: 180px !important;
+  }
+
+  #faq .faq-intro-copy,
+  #faq .faq-contact-link {
+    display: none !important;
+  }
+  #faq .faq-list {
+    margin-top: 18px !important;
+  }
+  #faq .faq-list details {
+    padding-block: 14px !important;
+  }
+
+  #contact .contact-copy > p:not(.eyebrow),
+  #contact .contact-small,
+  #contact .service-options {
+    display: none;
+  }
+  #contact .contact-phone {
+    margin-top: 18px;
+  }
+  #contact #lead-form {
+    margin-top: 22px;
+    padding: 18px !important;
+  }
+  #contact #lead-form fieldset {
+    margin-bottom: 12px;
+  }
+  #contact #lead-form legend {
+    display: none;
+  }
+}
