@@ -8,7 +8,7 @@
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  padding: clamp(48px, 5vw, 70px) max(5.2vw, 28px) clamp(44px, 4.5vw, 64px) !important;
+  padding: clamp(32px, 3.2vw, 48px) max(5.2vw, 28px) clamp(28px, 3vw, 42px) !important;
   background: #ffffff !important;
   color: #1a1a18 !important;
   border: none !important;

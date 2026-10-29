@@ -109,6 +109,11 @@
 .renovation-content .button:hover { background: var(--site-yellow); color: var(--site-black); }
 .renovation-content .button span { color: var(--site-black); }
 
+/* Компактный переход после блока шумоизоляции. */
+.solution-details + .renovation {
+  padding-top: clamp(42px, 4vw, 64px);
+}
+
 @media (max-width: 900px) {
   .renovation-heading { grid-template-columns: 1fr; gap: 20px; }
   .renovation-heading > p { max-width: 620px; }
@@ -122,6 +127,7 @@
 }
 @media (max-width: 600px) {
   .renovation { padding: 68px 20px; }
+  .solution-details + .renovation { padding-top: 42px; }
   .renovation-top { align-items: flex-start; }
   .renovation-top > span { max-width: 145px; text-align: right; font-size: 9px; }
   .renovation-heading { margin: 32px 0; }
