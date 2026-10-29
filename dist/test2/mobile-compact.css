@@ -334,6 +334,11 @@
     max-width: calc(100% - 24px) !important;
   }
   #sound-details .sound-cards-grid { order: 5; }
+  #sound-details .sound-benefits-strip {
+    order: 6;
+    width: 100%;
+    margin: 12px 0 0 !important;
+  }
   #sound-details .sound-scenarios-wrap { order: 6; }
   #sound-details .sound-cta-row { order: 7; }
 
