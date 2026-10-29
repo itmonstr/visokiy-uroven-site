@@ -156,7 +156,16 @@
   border: 1px solid #f3cb57;
   color: #fff;
 }
-.light-showcase-actions a:hover { background: #fff; border-color: #fff; color: #171717; }
+.light-showcase-primary:hover {
+  background: #e2b83f;
+  border-color: #e2b83f;
+  color: #171717;
+}
+.light-showcase-secondary:hover {
+  background: #f3cb57;
+  border-color: #f3cb57;
+  color: #171717;
+}
 .light-showcase-actions a span { font-size: 20px; line-height: 1; }
 .light-showcase-visual {
   position: relative;
