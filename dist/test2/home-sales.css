@@ -1357,7 +1357,7 @@
   }
 }
 
-/* Apply the exact #light-details subtitle typography across all section subtitles while preserving their current font-size */
+/* Apply clean subtitle typography across all section subtitles while preserving their current font-size */
 #main :is(#services h2 .serif,
           #ceiling-details .solution-copy h2 span.serif,
           #light-details .light-showcase-copy h2 span,
@@ -1369,9 +1369,9 @@
           .price-section h2 .serif) {
   font-family: 'Golos Text', Arial, sans-serif !important;
   font-style: normal !important;
-  font-weight: 750 !important;
+  font-weight: 600 !important;
   line-height: 1.06 !important;
-  letter-spacing: -0.045em !important;
+  letter-spacing: -0.035em !important;
   color: #f3cb57 !important;
   -webkit-text-fill-color: #f3cb57 !important;
   background: none !important;
