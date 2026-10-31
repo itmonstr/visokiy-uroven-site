@@ -5,8 +5,10 @@
 
 #projects .project-side-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  transform: none !important;
   z-index: 4;
   width: 36px;
   height: 60px;
@@ -20,8 +22,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: .9;
-  transition: transform .22s ease, opacity .22s ease;
 }
 
 #projects .project-side-nav svg {
@@ -29,7 +29,6 @@
   height: 42px;
   display: block;
   overflow: visible;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .55));
 }
 
 #projects .project-side-nav svg path {
@@ -37,6 +36,7 @@
   stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: stroke .2s ease;
 }
 
 #projects .project-side-prev {
@@ -47,14 +47,8 @@
   right: -42px;
 }
 
-#projects .project-side-prev:hover {
-  opacity: 1;
-  transform: translate(-3px, -50%);
-}
-
-#projects .project-side-next:hover {
-  opacity: 1;
-  transform: translate(3px, -50%);
+#projects .project-side-nav:is(:hover, :focus-visible) svg path {
+  stroke: var(--site-white) !important;
 }
 
 @media (max-width: 1180px) {
@@ -159,8 +153,10 @@
 
 #project-dialog .dialog-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+  transform: none !important;
   z-index: 3;
   width: 44px;
   height: 64px;
@@ -174,8 +170,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: .9;
-  transition: transform .22s ease, opacity .22s ease;
 }
 
 #project-dialog .dialog-nav svg {
@@ -183,14 +177,14 @@
   height: 44px;
   display: block;
   overflow: visible;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .85));
 }
 
 #project-dialog .dialog-nav svg path {
-  stroke: var(--site-yellow);
+  stroke: var(--site-yellow) !important;
   stroke-width: 3.4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: stroke .2s ease;
 }
 
 #project-dialog .dialog-prev {
@@ -201,14 +195,8 @@
   right: 16px;
 }
 
-#project-dialog .dialog-prev:hover {
-  opacity: 1;
-  transform: translate(-3px, -50%);
-}
-
-#project-dialog .dialog-next:hover {
-  opacity: 1;
-  transform: translate(3px, -50%);
+#project-dialog .dialog-nav:is(:hover, :focus-visible) svg path {
+  stroke: var(--site-white) !important;
 }
 
 @media (max-width: 900px) {
