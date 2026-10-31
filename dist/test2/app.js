@@ -18,10 +18,13 @@ if (heroVisual && !reducedMotion && matchMedia('(hover: hover) and (pointer: fin
 }
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
-menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); navigation.classList.toggle('open', open); });
+const navBackdrop = document.querySelector('#nav-backdrop');
+const setMenuOpen = open => { menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); navigation.classList.toggle('open', open); if (navBackdrop) navBackdrop.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; };
+menu.addEventListener('click', () => setMenuOpen(menu.getAttribute('aria-expanded') !== 'true'));
+if (navBackdrop) navBackdrop.addEventListener('click', () => setMenuOpen(false));
 const navLinks = [...navigation.querySelectorAll('a')];
 const setActiveNav = targetLink => { navLinks.forEach(a => a.classList.toggle('is-active', a === targetLink)); };
-navLinks.forEach(link => link.addEventListener('click', () => { if (link.getAttribute('href')?.startsWith('#')) setActiveNav(link); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Открыть меню'); navigation.classList.remove('open'); }));
+navLinks.forEach(link => link.addEventListener('click', () => { if (link.getAttribute('href')?.startsWith('#')) setActiveNav(link); setMenuOpen(false); }));
 const navSectionMap = new Map(navLinks.filter(a => a.getAttribute('href')?.startsWith('#') && a.getAttribute('href').length > 1).map(a => [document.querySelector(a.getAttribute('href')), a]).filter(([el]) => el));
 if (navSectionMap.size) {
   const navObserver = new IntersectionObserver(entries => {
@@ -30,7 +33,7 @@ if (navSectionMap.size) {
   }, { rootMargin: '-25% 0px -55% 0px', threshold: [0.05, 0.25, 0.5] });
   navSectionMap.forEach((_, section) => navObserver.observe(section));
 }
-document.addEventListener('keydown', e => { if(e.key === 'Escape') { menu.setAttribute('aria-expanded','false'); navigation.classList.remove('open'); } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') setMenuOpen(false); });
 if (!reducedMotion) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } }), { threshold: .08 });
   document.querySelectorAll('.section h2,.service-layout,.heading-row,.trust-list,.steps,.project').forEach(el => { el.classList.add('reveal'); observer.observe(el); });
