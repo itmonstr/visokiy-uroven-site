@@ -822,3 +822,167 @@
     font-size: 12px;
   }
 }
+
+/* Light first-screen adaptation for the silver-grey ceiling & black track photo */
+.hero {
+  background: #ececea !important;
+  color: var(--site-black) !important;
+}
+
+.hero::after {
+  box-shadow: none !important;
+  opacity: .55;
+}
+
+.hero-visual {
+  inset: 0 0 0 34%;
+  background: #dcdcd9 !important;
+}
+
+.hero-visual > img {
+  object-position: 58% 25% !important;
+  filter: contrast(1.03) brightness(1) saturate(1) !important;
+}
+
+.hero-visual::after {
+  background:
+    linear-gradient(90deg, #ececea 0%, rgba(236, 236, 234, .92) 20%, rgba(236, 236, 234, .24) 52%, transparent 74%),
+    linear-gradient(0deg, rgba(236, 236, 234, .55) 0%, transparent 22%) !important;
+}
+
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--site-yellow);
+  background: rgba(23, 23, 23, .07);
+  color: var(--site-black) !important;
+  font-weight: 700;
+}
+
+.hero .hero-title-serif {
+  color: var(--site-black) !important;
+}
+
+.hero .hero-title-line {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 8px;
+  padding: .04em .18em .09em;
+  border-radius: 8px;
+  background: var(--site-black) !important;
+  color: var(--site-yellow) !important;
+}
+
+.hero-description {
+  color: rgba(23, 23, 23, .85) !important;
+}
+
+.hero-description strong {
+  color: var(--site-black) !important;
+}
+
+.hero-offers li,
+.hero-offers .offer-wide {
+  background: rgba(255, 255, 255, .92) !important;
+  border: 1px solid rgba(23, 23, 23, .12) !important;
+  box-shadow: 0 10px 26px rgba(23, 23, 23, .06);
+  backdrop-filter: blur(12px);
+}
+
+.hero-offers .offer-wide {
+  border-left: 3px solid var(--site-yellow) !important;
+}
+
+.hero-offers li:not(.offer-wide) > span,
+.hero-offers .offer-wide > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--site-yellow);
+  color: var(--site-black) !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  line-height: 1;
+}
+
+.hero-offers strong {
+  color: var(--site-black) !important;
+}
+
+.hero-offers small {
+  color: rgba(23, 23, 23, .68) !important;
+}
+
+.hero-actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 11px 18px;
+  border: 1.5px solid rgba(23, 23, 23, .38);
+  border-radius: 8px;
+  color: var(--site-black) !important;
+  font-weight: 650;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.hero-actions .text-link span {
+  color: var(--site-black) !important;
+}
+
+.hero-actions .text-link:is(:hover, :focus-visible) {
+  border-color: var(--site-black);
+  background: rgba(23, 23, 23, .06);
+}
+
+@media (max-width: 800px) {
+  .hero-visual {
+    inset: 0 !important;
+    opacity: 1 !important;
+  }
+
+  .hero-copy {
+    padding-top: 102px !important;
+    background: linear-gradient(90deg, rgba(236, 236, 234, .96) 0%, rgba(236, 236, 234, .82) 68%, rgba(236, 236, 234, .35) 100%) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background: #ececea !important;
+  }
+
+  .hero-visual > img {
+    object-position: 42% 22% !important;
+    filter: contrast(1.03) brightness(1) saturate(1) !important;
+  }
+
+  .hero-visual::after {
+    background: linear-gradient(180deg, rgba(236, 236, 234, .05) 0%, rgba(236, 236, 234, .34) 40%, rgba(236, 236, 234, .92) 74%, #ececea 100%) !important;
+  }
+
+  .hero-copy {
+    padding-top: 88px !important;
+    background: linear-gradient(180deg, transparent 0%, rgba(236, 236, 234, .55) 36%, rgba(236, 236, 234, .95) 68%, #ececea 100%) !important;
+  }
+
+  .hero .eyebrow {
+    background: rgba(255, 255, 255, .86);
+    color: var(--site-black) !important;
+  }
+
+  .hero-mobile-description {
+    color: rgba(23, 23, 23, .86) !important;
+  }
+
+  .hero-mobile-description strong {
+    color: var(--site-black) !important;
+  }
+}

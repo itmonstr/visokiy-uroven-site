@@ -8,19 +8,19 @@
 }
 
 /* Use only white, black and the brand yellow for visible copy. */
-:is(.header, .hero, .hero-mobile-facts, .promise-bar, #services, .scope,
+:is(.header, .hero-mobile-facts, .promise-bar, #services, .scope,
     #light-details, #engineering, #projects, #approach, .faq, #contact, .footer)
   :is(h1, h2, h3, p, span, strong, small, li, a, button, summary, label, legend, time) {
   color: var(--site-white) !important;
 }
 
-:is(.company-intro, #ceiling-details, #sound-details, .process)
+:is(.hero, .company-intro, #ceiling-details, #sound-details, .process)
   :is(h1, h2, h3, p, span, strong, small, li, a, button, summary, label, legend, time) {
   color: var(--site-black) !important;
 }
 
 /* Consistent yellow accents, including all service-detail headings. */
-:is(.hero .hero-title-line, .hero .hero-title-line *, .hero .eyebrow,
+:is(.hero .hero-title-line, .hero .hero-title-line *,
     .hero-mobile-facts strong, .promise-bar div > span,
     #services .eyebrow, #services h2 .serif, #services .service-number,
     #services .service-list article div > a, #services .service-link,
