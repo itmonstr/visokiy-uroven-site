@@ -103,11 +103,27 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 0;
-  cursor: grab;
+  cursor: grab !important;
+  user-select: none;
+}
+
+#projects .project-grid .project,
+#projects .project-grid .project * {
+  cursor: grab !important;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#projects .project-grid.is-dragging,
+#projects .project-grid.is-dragging .project,
+#projects .project-grid.is-dragging .project *,
+#projects .project-grid:active,
+#projects .project-grid .project:active,
+#projects .project-grid .project:active * {
+  cursor: grabbing !important;
 }
 
 #projects .project-grid.is-dragging {
-  cursor: grabbing;
   scroll-snap-type: none;
 }
 

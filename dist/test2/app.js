@@ -186,7 +186,8 @@ if (projectScrollHint && projectGridEl) {
 }
 if (projectGridEl) {
   let isPointerDown = false, startX = 0, startScrollLeft = 0;
-  projectGridEl.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; isPointerDown = true; projectDragMoved = false; startX = e.clientX; startScrollLeft = projectGridEl.scrollLeft; });
+  projectGridEl.addEventListener('dragstart', e => e.preventDefault());
+  projectGridEl.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; isPointerDown = true; projectDragMoved = false; startX = e.clientX; startScrollLeft = projectGridEl.scrollLeft; projectGridEl.classList.add('is-dragging'); });
   window.addEventListener('pointermove', e => { if (!isPointerDown) return; const dx = e.clientX - startX; if (Math.abs(dx) > 6) { projectDragMoved = true; projectGridEl.classList.add('is-dragging'); projectGridEl.scrollLeft = startScrollLeft - dx; } });
   window.addEventListener('pointerup', () => { if (!isPointerDown) return; isPointerDown = false; projectGridEl.classList.remove('is-dragging'); setTimeout(() => { projectDragMoved = false; }, 0); });
 }
