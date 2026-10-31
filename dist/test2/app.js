@@ -173,25 +173,38 @@ if (!reducedMotion) {
 }
 const dialog=document.querySelector('#project-dialog');
 const projectGridEl = document.querySelector('#projects .project-grid');
-const projectScrollHint = document.querySelector('#projects .project-scroll-hint');
-let projectDragMoved = false;
-if (projectScrollHint && projectGridEl) {
-  const scrollProjectsRight = () => {
-    const maxScroll = projectGridEl.scrollWidth - projectGridEl.clientWidth;
-    const nextLeft = projectGridEl.scrollLeft + 568;
-    projectGridEl.scrollTo({ left: projectGridEl.scrollLeft >= maxScroll - 24 ? 0 : nextLeft, behavior: 'smooth' });
-  };
-  projectScrollHint.addEventListener('click', scrollProjectsRight);
-  projectScrollHint.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollProjectsRight(); } });
-}
+const projectPrevBtn = document.querySelector('#projects .project-side-prev');
+const projectNextBtn = document.querySelector('#projects .project-side-next');
 if (projectGridEl) {
-  let isPointerDown = false, startX = 0, startScrollLeft = 0;
-  projectGridEl.addEventListener('dragstart', e => e.preventDefault());
-  projectGridEl.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; isPointerDown = true; projectDragMoved = false; startX = e.clientX; startScrollLeft = projectGridEl.scrollLeft; projectGridEl.classList.add('is-dragging'); });
-  window.addEventListener('pointermove', e => { if (!isPointerDown) return; const dx = e.clientX - startX; if (Math.abs(dx) > 6) { projectDragMoved = true; projectGridEl.classList.add('is-dragging'); projectGridEl.scrollLeft = startScrollLeft - dx; } });
-  window.addEventListener('pointerup', () => { if (!isPointerDown) return; isPointerDown = false; projectGridEl.classList.remove('is-dragging'); setTimeout(() => { projectDragMoved = false; }, 0); });
+  if (projectPrevBtn) projectPrevBtn.addEventListener('click', () => projectGridEl.scrollBy({ left: -568, behavior: 'smooth' }));
+  if (projectNextBtn) projectNextBtn.addEventListener('click', () => projectGridEl.scrollBy({ left: 568, behavior: 'smooth' }));
 }
-document.querySelectorAll('.project-grid .project').forEach(project => project.addEventListener('click', e => { if (projectDragMoved) { e.preventDefault(); return; } document.querySelector('#dialog-image').src=project.dataset.image; document.querySelector('#dialog-image').alt=project.querySelector('img')?.alt || 'Фотография выполненной работы'; dialog.showModal(); }));
+const dialogImg = document.querySelector('#dialog-image');
+const dialogPrevBtn = document.querySelector('#project-dialog .dialog-prev');
+const dialogNextBtn = document.querySelector('#project-dialog .dialog-next');
+let currentProjectEl = null;
+const getVisibleProjects = () => [...document.querySelectorAll('.project-grid .project:not([hidden])')];
+const showProjectInDialog = project => {
+  if (!project || !dialogImg) return;
+  currentProjectEl = project;
+  dialogImg.src = project.dataset.image;
+  dialogImg.alt = project.querySelector('img')?.alt || 'Фотография выполненной работы';
+};
+const stepDialogProject = delta => {
+  const list = getVisibleProjects();
+  if (!list.length) return;
+  const idx = list.indexOf(currentProjectEl);
+  const nextIdx = idx === -1 ? 0 : (idx + delta + list.length) % list.length;
+  showProjectInDialog(list[nextIdx]);
+};
+if (dialogPrevBtn) dialogPrevBtn.addEventListener('click', e => { e.stopPropagation(); stepDialogProject(-1); });
+if (dialogNextBtn) dialogNextBtn.addEventListener('click', e => { e.stopPropagation(); stepDialogProject(1); });
+document.addEventListener('keydown', e => {
+  if (!dialog?.open) return;
+  if (e.key === 'ArrowLeft') { e.preventDefault(); stepDialogProject(-1); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); stepDialogProject(1); }
+});
+document.querySelectorAll('.project-grid .project').forEach(project => project.addEventListener('click', () => { showProjectInDialog(project); dialog.showModal(); }));
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{ if(e.target===dialog){ const r=dialog.getBoundingClientRect(); if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close(); } });
 document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{ const radio=[...document.querySelectorAll('[name=service]')].find(r=>r.value===a.dataset.service); if(radio)radio.checked=true; }));
