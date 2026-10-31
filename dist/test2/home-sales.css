@@ -904,6 +904,8 @@
   min-height: 0 !important;
   margin: 0 !important;
   z-index: 0 !important;
+  perspective: none !important;
+  transform: none !important;
   background: #171717 !important;
 }
 
@@ -911,6 +913,8 @@
   width: 100% !important;
   height: 100% !important;
   transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
   object-fit: cover !important;
   object-position: center center !important;
   filter: none !important;
