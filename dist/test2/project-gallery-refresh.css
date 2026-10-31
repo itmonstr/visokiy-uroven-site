@@ -1,0 +1,64 @@
+/* Compact service-specific portfolio rail */
+#projects .project-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #f3cb57 #22281d;
+  padding: 0 0 14px;
+}
+
+#projects .project-grid .project {
+  flex: 0 0 min(33.333%, 430px);
+  height: 390px;
+  grid-column: auto;
+  grid-row: auto;
+  clip-path: none;
+  border-radius: 8px;
+  scroll-snap-align: start;
+}
+
+#projects .project-grid.filtered .project {
+  flex-basis: min(48%, 540px);
+  height: 390px;
+}
+
+#projects .project-grid .project[hidden] {
+  display: none !important;
+}
+
+#projects .project-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+#projects .project-grid::-webkit-scrollbar-track {
+  background: #22281d;
+}
+
+#projects .project-grid::-webkit-scrollbar-thumb {
+  background: #f3cb57;
+  border-radius: 99px;
+}
+
+@media (max-width: 900px) {
+  #projects .project-grid .project,
+  #projects .project-grid.filtered .project {
+    flex-basis: 48%;
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  #projects .project-grid {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  #projects .project-grid .project,
+  #projects .project-grid.filtered .project {
+    flex-basis: 87%;
+    height: 350px;
+  }
+}

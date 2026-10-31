@@ -77,7 +77,19 @@ document.querySelectorAll('.eng-callout-card').forEach(card => {
     else setEngineeringLayer('all');
   });
 });
-document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach(b => { b.classList.toggle('active',b===button); b.setAttribute('aria-pressed',String(b===button)); }); document.querySelectorAll('.project-grid .project').forEach(p => { p.hidden=button.dataset.filter!=='all'&&p.dataset.category!==button.dataset.filter; }); document.querySelector('.project-grid').classList.toggle('filtered',button.dataset.filter!=='all'); }));
+document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-filter]').forEach(b => {
+    b.classList.toggle('active', b === button);
+    b.setAttribute('aria-pressed', String(b === button));
+  });
+
+  const projectGrid = document.querySelector('.project-grid');
+  document.querySelectorAll('.project-grid .project').forEach(project => {
+    project.hidden = button.dataset.filter !== 'all' && project.dataset.category !== button.dataset.filter;
+  });
+  projectGrid.classList.toggle('filtered', button.dataset.filter !== 'all');
+  projectGrid.scrollTo({ left: 0, behavior: 'auto' });
+}));
 const moodScenarios = {
   morning: {
     title: 'Режим «Утро» — бодрость и энергия',
