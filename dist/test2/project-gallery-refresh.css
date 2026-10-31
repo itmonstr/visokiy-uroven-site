@@ -20,6 +20,10 @@
   scroll-snap-align: start;
 }
 
+#projects .project-grid .project-bottom {
+  display: none;
+}
+
 #projects .project-grid.filtered .project {
   flex-basis: min(48%, 540px);
   height: 390px;
