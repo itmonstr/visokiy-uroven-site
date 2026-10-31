@@ -1084,3 +1084,23 @@
     color: var(--site-white) !important;
   }
 }
+
+/* Clean top alignment across all sections without over-headings (keep only .hero .eyebrow) */
+#main section:not(.hero) .eyebrow,
+#main .section-top,
+#ceiling-details .solution-photo > span,
+#ceiling-details .ceiling-top-bar,
+#light-details .light-showcase-kicker,
+#sound-details .sound-top-bar,
+#renovation .renovation-top,
+#renovation .renovation-kicker,
+#approach .trust-top-bar,
+#faq .faq-eyebrow {
+  display: none !important;
+}
+
+#renovation .renovation-heading,
+#renovation .renovation-content h3,
+#contact .contact-copy h2 {
+  margin-top: 0 !important;
+}
