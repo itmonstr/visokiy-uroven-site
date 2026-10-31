@@ -1377,3 +1377,19 @@
   background: none !important;
   -webkit-text-stroke: 0 !important;
 }
+
+/* Option 4: Yellow subtitle text on a dark graphite pill (#171717) inside white sections */
+#main :is(#ceiling-details .solution-copy h2 span.serif,
+          #sound-details .sound-hero-title .sound-title-gold,
+          #renovation .renovation-heading h2 .serif,
+          .price-section h2 .serif) {
+  display: inline-block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-top: 6px !important;
+  padding: 0.08em 0.28em 0.14em !important;
+  border-radius: 8px !important;
+  background: var(--site-black) !important;
+  color: var(--site-yellow) !important;
+  -webkit-text-fill-color: var(--site-yellow) !important;
+}
