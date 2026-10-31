@@ -1364,7 +1364,7 @@
 #main #sound-details .sound-hero-title .sound-title-gold,
 #main #renovation .renovation-heading h2 .serif,
 #main .price-section h2 .serif {
-  font-weight: 900 !important;
-  -webkit-text-stroke: 0.45px var(--site-yellow);
-  letter-spacing: -0.025em !important;
+  font-weight: 750 !important;
+  -webkit-text-stroke: 0 !important;
+  letter-spacing: -0.03em !important;
 }
