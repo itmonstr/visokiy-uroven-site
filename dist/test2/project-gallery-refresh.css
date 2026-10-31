@@ -1,4 +1,96 @@
 /* Clean, caption-free service portfolio */
+#projects .project-filters {
+  align-items: center;
+}
+
+#projects .project-scroll-hint {
+  margin-left: auto;
+  margin-bottom: 10px;
+  padding: 7px 14px;
+  border: 1px solid rgba(243, 203, 87, .32) !important;
+  border-radius: 999px;
+  background: rgba(243, 203, 87, .07);
+  color: var(--site-white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+#projects .project-scroll-hint:hover {
+  border-color: var(--site-yellow) !important;
+  background: rgba(243, 203, 87, .14);
+}
+
+#projects .project-scroll-hint-label {
+  color: rgba(255, 255, 255, .86);
+}
+
+#projects .project-scroll-hint-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--site-yellow);
+}
+
+#projects .project-scroll-hint-line {
+  position: relative;
+  width: 22px;
+  height: 1.5px;
+  border-radius: 99px;
+  background: rgba(243, 203, 87, .28);
+  overflow: hidden;
+}
+
+#projects .project-scroll-hint-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--site-yellow);
+  transform: translateX(-100%);
+  animation: project-scroll-line 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+#projects .project-scroll-hint-arrow {
+  display: inline-block;
+  color: var(--site-yellow) !important;
+  font-size: 14px;
+  line-height: 1;
+  animation: project-scroll-nudge 2.4s ease-in-out infinite;
+}
+
+@keyframes project-scroll-nudge {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: .72;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
+
+@keyframes project-scroll-line {
+  0% {
+    transform: translateX(-105%);
+  }
+  55%, 100% {
+    transform: translateX(105%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #projects .project-scroll-hint-line::after,
+  #projects .project-scroll-hint-arrow {
+    animation: none;
+  }
+}
+
 #projects .project-grid {
   display: grid;
   grid-auto-flow: column dense;
@@ -8,9 +100,15 @@
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: #f3cb57 #22281d;
-  padding: 0 0 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0;
+  cursor: grab;
+}
+
+#projects .project-grid.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
 }
 
 #projects .project-grid .project,
@@ -61,16 +159,9 @@
 }
 
 #projects .project-grid::-webkit-scrollbar {
-  height: 7px;
-}
-
-#projects .project-grid::-webkit-scrollbar-track {
-  background: #22281d;
-}
-
-#projects .project-grid::-webkit-scrollbar-thumb {
-  background: #f3cb57;
-  border-radius: 99px;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 #project-dialog {
@@ -102,6 +193,10 @@
 }
 
 @media (max-width: 600px) {
+  #projects .project-scroll-hint {
+    display: none;
+  }
+
   #projects .project-grid {
     grid-template-rows: repeat(2, 150px);
     grid-auto-columns: 190px;

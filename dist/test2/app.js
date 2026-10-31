@@ -172,7 +172,25 @@ if (!reducedMotion) {
   }
 }
 const dialog=document.querySelector('#project-dialog');
-document.querySelectorAll('.project-grid .project').forEach(project => project.addEventListener('click', () => { document.querySelector('#dialog-image').src=project.dataset.image; document.querySelector('#dialog-image').alt=project.querySelector('img')?.alt || 'Фотография выполненной работы'; dialog.showModal(); }));
+const projectGridEl = document.querySelector('#projects .project-grid');
+const projectScrollHint = document.querySelector('#projects .project-scroll-hint');
+let projectDragMoved = false;
+if (projectScrollHint && projectGridEl) {
+  const scrollProjectsRight = () => {
+    const maxScroll = projectGridEl.scrollWidth - projectGridEl.clientWidth;
+    const nextLeft = projectGridEl.scrollLeft + 568;
+    projectGridEl.scrollTo({ left: projectGridEl.scrollLeft >= maxScroll - 24 ? 0 : nextLeft, behavior: 'smooth' });
+  };
+  projectScrollHint.addEventListener('click', scrollProjectsRight);
+  projectScrollHint.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollProjectsRight(); } });
+}
+if (projectGridEl) {
+  let isPointerDown = false, startX = 0, startScrollLeft = 0;
+  projectGridEl.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; isPointerDown = true; projectDragMoved = false; startX = e.clientX; startScrollLeft = projectGridEl.scrollLeft; });
+  window.addEventListener('pointermove', e => { if (!isPointerDown) return; const dx = e.clientX - startX; if (Math.abs(dx) > 6) { projectDragMoved = true; projectGridEl.classList.add('is-dragging'); projectGridEl.scrollLeft = startScrollLeft - dx; } });
+  window.addEventListener('pointerup', () => { if (!isPointerDown) return; isPointerDown = false; projectGridEl.classList.remove('is-dragging'); setTimeout(() => { projectDragMoved = false; }, 0); });
+}
+document.querySelectorAll('.project-grid .project').forEach(project => project.addEventListener('click', e => { if (projectDragMoved) { e.preventDefault(); return; } document.querySelector('#dialog-image').src=project.dataset.image; document.querySelector('#dialog-image').alt=project.querySelector('img')?.alt || 'Фотография выполненной работы'; dialog.showModal(); }));
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{ if(e.target===dialog){ const r=dialog.getBoundingClientRect(); if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close(); } });
 document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{ const radio=[...document.querySelectorAll('[name=service]')].find(r=>r.value===a.dataset.service); if(radio)radio.checked=true; }));
