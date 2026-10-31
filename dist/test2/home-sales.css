@@ -1378,18 +1378,26 @@
   -webkit-text-stroke: 0 !important;
 }
 
-/* Option 4: Yellow subtitle text on a dark graphite pill (#171717) inside white sections */
+/* Black subtitle text with brand yellow underline inside white sections */
 #main :is(#ceiling-details .solution-copy h2 span.serif,
           #sound-details .sound-hero-title .sound-title-gold,
           #renovation .renovation-heading h2 .serif,
           .price-section h2 .serif) {
-  display: inline-block !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  margin-top: 6px !important;
-  padding: 0.08em 0.28em 0.14em !important;
-  border-radius: 8px !important;
-  background: var(--site-black) !important;
-  color: var(--site-yellow) !important;
-  -webkit-text-fill-color: var(--site-yellow) !important;
+  display: inline !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: none !important;
+  color: var(--site-black) !important;
+  -webkit-text-fill-color: var(--site-black) !important;
+  text-decoration-line: underline !important;
+  text-decoration-color: var(--site-yellow) !important;
+  text-decoration-thickness: 4px !important;
+  text-underline-offset: 6px !important;
+  text-decoration-skip-ink: none !important;
+}
+
+#main #sound-details .sound-hero-title .sound-title-gold {
+  display: block !important;
+  margin-top: 2px !important;
 }
