@@ -1104,3 +1104,255 @@
 #contact .contact-copy h2 {
   margin-top: 0 !important;
 }
+
+/* 5. Compact #light-details (3 directions + 1 CTA + photo) */
+#light-details.light-showcase-section {
+  padding: clamp(38px, 3.8vw, 56px) max(5.2vw, 24px) !important;
+}
+
+#light-details .light-showcase-copy h2 {
+  font-size: clamp(34px, 3.5vw, 50px) !important;
+  line-height: 1.06 !important;
+  margin: 0 0 12px !important;
+}
+
+#light-details .light-showcase-copy h2 span {
+  margin-top: 4px !important;
+}
+
+#light-details .light-showcase-lead {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  margin: 0 0 20px !important;
+}
+
+#light-details .light-benefits {
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+
+#light-details .light-benefits article {
+  min-height: 0 !important;
+  padding: 13px 16px !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: center !important;
+}
+
+#light-details .light-benefit-icon {
+  width: 44px !important;
+  height: 44px !important;
+  margin-bottom: 0 !important;
+}
+
+#light-details .light-benefit-icon svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+#light-details .light-benefits h3 {
+  font-size: 16px !important;
+  margin: 0 0 4px !important;
+}
+
+#light-details .light-benefits p {
+  font-size: 13px !important;
+  line-height: 1.38 !important;
+}
+
+#light-details .light-showcase-actions {
+  display: flex !important;
+  margin-top: 20px !important;
+}
+
+#light-details .light-showcase-primary {
+  width: fit-content;
+  min-width: 260px;
+  color: var(--site-black) !important;
+}
+
+#light-details .light-showcase-primary span {
+  color: var(--site-black) !important;
+}
+
+#light-details .light-showcase-visual {
+  height: clamp(360px, 34vw, 440px) !important;
+}
+
+@media (max-width: 760px) {
+  #light-details.light-showcase-section {
+    padding: 34px 18px 38px !important;
+  }
+
+  #light-details .light-showcase-visual {
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  #light-details .light-showcase-primary {
+    width: 100%;
+  }
+}
+
+/* 6. Simplified #sound-details (2 systems: Tonlos & SoundGuard, purpose, thickness, advantages) */
+#sound-details.sound-mockup-section {
+  padding: clamp(36px, 3.6vw, 52px) max(5.2vw, 24px) !important;
+}
+
+#sound-details .sound-stage-img {
+  height: clamp(340px, 31vw, 420px) !important;
+}
+
+#sound-details .sound-hero-title {
+  margin: 0 0 18px !important;
+}
+
+#sound-details .sound-title-sans,
+#sound-details .sound-title-gold {
+  font-size: clamp(32px, 3.5vw, 46px) !important;
+  line-height: 1.08 !important;
+}
+
+#sound-details .sound-card {
+  padding: 18px 20px !important;
+  gap: 10px;
+}
+
+#sound-details .sound-card-header {
+  margin-bottom: 0 !important;
+}
+
+#sound-details .sound-card-name {
+  font-size: 20px !important;
+  line-height: 1.15 !important;
+}
+
+#sound-details .sound-card-purpose {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--site-black) !important;
+  opacity: .72;
+}
+
+#sound-details .sound-card-text {
+  margin: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+#sound-details .sound-card-thickness {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(23, 23, 23, .1);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--site-black) !important;
+}
+
+#sound-details .sound-card-thickness strong {
+  font-weight: 800;
+  color: var(--site-black) !important;
+}
+
+@media (max-width: 680px) {
+  #sound-details.sound-mockup-section {
+    padding: 34px 18px 36px !important;
+    gap: 14px !important;
+  }
+
+  #sound-details .sound-visual-col,
+  #sound-details .sound-cards-grid::before {
+    display: none !important;
+  }
+
+  #sound-details .sound-cards-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 10px !important;
+    overflow: visible !important;
+  }
+
+  #sound-details .sound-card {
+    flex: none !important;
+    width: 100% !important;
+    padding: 15px 16px !important;
+  }
+}
+
+/* 7. Shortened #renovation (gift project, fixed estimate, 3 short stages, result photo, CTA) */
+#renovation.renovation {
+  padding-top: clamp(44px, 4.5vw, 68px) !important;
+  padding-bottom: clamp(44px, 4.5vw, 68px) !important;
+}
+
+#renovation .renovation-heading {
+  margin: 0 0 28px !important;
+}
+
+#renovation .renovation-heading h2 {
+  font-size: clamp(34px, 3.8vw, 52px) !important;
+}
+
+#renovation .renovation-grid,
+#renovation .renovation-visual {
+  min-height: 430px !important;
+}
+
+#renovation .renovation-visual::after {
+  display: none !important;
+}
+
+#renovation .renovation-content {
+  padding: clamp(26px, 3.2vw, 44px) !important;
+  justify-content: center;
+}
+
+#renovation .renovation-stage {
+  padding: 14px 0 !important;
+}
+
+#renovation .renovation-stage:first-of-type {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#renovation .renovation-stage h4 {
+  margin: 0 0 5px !important;
+}
+
+#renovation .renovation-stage p {
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+#renovation .renovation-content .button {
+  margin-top: 18px !important;
+}
+
+@media (max-width: 600px) {
+  #renovation.renovation {
+    padding: 36px 18px !important;
+  }
+
+  #renovation .renovation-heading {
+    margin: 0 0 20px !important;
+  }
+
+  #renovation .renovation-grid {
+    min-height: 0 !important;
+  }
+
+  #renovation .renovation-visual {
+    min-height: 220px !important;
+  }
+
+  #renovation .renovation-content {
+    padding: 24px 20px 28px !important;
+  }
+}
