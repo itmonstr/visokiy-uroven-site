@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@800;900&display=swap');
+
 /* Блок «Цены и сроки» в фирменной палитре сайта (--site-white, --site-black, --site-yellow). */
 .price-section {
   background: var(--site-white);
@@ -1355,4 +1357,14 @@
   #renovation .renovation-content {
     padding: 24px 20px 28px !important;
   }
+}
+
+/* Bold yellow subtitles on white sections so they are easier on the eyes */
+#main #ceiling-details .solution-copy h2 span.serif,
+#main #sound-details .sound-hero-title .sound-title-gold,
+#main #renovation .renovation-heading h2 .serif,
+#main .price-section h2 .serif {
+  font-weight: 900 !important;
+  -webkit-text-stroke: 0.45px var(--site-yellow);
+  letter-spacing: -0.025em !important;
 }
