@@ -1201,7 +1201,7 @@
 }
 
 #sound-details .sound-stage-img {
-  height: clamp(340px, 31vw, 420px) !important;
+  height: clamp(400px, 34vw, 480px) !important;
 }
 
 #sound-details .sound-hero-title {
@@ -1301,7 +1301,7 @@
 
 #renovation .renovation-grid,
 #renovation .renovation-visual {
-  min-height: 430px !important;
+  min-height: 500px !important;
 }
 
 #renovation .renovation-visual::after {
