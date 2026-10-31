@@ -19,7 +19,17 @@ if (heroVisual && !reducedMotion && matchMedia('(hover: hover) and (pointer: fin
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); navigation.classList.toggle('open', open); });
-navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Открыть меню'); navigation.classList.remove('open'); }));
+const navLinks = [...navigation.querySelectorAll('a')];
+const setActiveNav = targetLink => { navLinks.forEach(a => a.classList.toggle('is-active', a === targetLink)); };
+navLinks.forEach(link => link.addEventListener('click', () => { if (link.getAttribute('href')?.startsWith('#')) setActiveNav(link); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Открыть меню'); navigation.classList.remove('open'); }));
+const navSectionMap = new Map(navLinks.filter(a => a.getAttribute('href')?.startsWith('#') && a.getAttribute('href').length > 1).map(a => [document.querySelector(a.getAttribute('href')), a]).filter(([el]) => el));
+if (navSectionMap.size) {
+  const navObserver = new IntersectionObserver(entries => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActiveNav(navSectionMap.get(visible.target));
+  }, { rootMargin: '-25% 0px -55% 0px', threshold: [0.05, 0.25, 0.5] });
+  navSectionMap.forEach((_, section) => navObserver.observe(section));
+}
 document.addEventListener('keydown', e => { if(e.key === 'Escape') { menu.setAttribute('aria-expanded','false'); navigation.classList.remove('open'); } });
 if (!reducedMotion) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); } }), { threshold: .08 });
