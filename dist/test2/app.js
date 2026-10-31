@@ -172,10 +172,9 @@ if (!reducedMotion) {
   }
 }
 const dialog=document.querySelector('#project-dialog');
-document.querySelectorAll('.project').forEach(project => project.addEventListener('click', () => { document.querySelector('#dialog-image').src=project.dataset.image; document.querySelector('#dialog-image').alt=project.dataset.title; document.querySelector('#dialog-title').textContent=project.dataset.title; document.querySelector('#dialog-description').textContent=project.dataset.description; dialog.showModal(); }));
+document.querySelectorAll('.project-grid .project').forEach(project => project.addEventListener('click', () => { document.querySelector('#dialog-image').src=project.dataset.image; document.querySelector('#dialog-image').alt=project.querySelector('img')?.alt || 'Фотография выполненной работы'; dialog.showModal(); }));
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{ if(e.target===dialog){ const r=dialog.getBoundingClientRect(); if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close(); } });
-document.querySelector('#dialog-cta').addEventListener('click',()=>dialog.close());
 document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>{ const radio=[...document.querySelectorAll('[name=service]')].find(r=>r.value===a.dataset.service); if(radio)radio.checked=true; }));
 const form=document.querySelector('#lead-form');
 form.addEventListener('input',()=>{document.querySelector('#form-result').hidden=true;});
