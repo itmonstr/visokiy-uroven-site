@@ -24,11 +24,7 @@
 .reviews-heading {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(230px, 340px);
-  align-items: end;
-  gap: 40px;
-  max-width: 1180px;
+  max-width: 1320px;
   margin: 0 auto 34px;
 }
 
@@ -50,8 +46,6 @@
 }
 
 .reviews-heading h2 span { color: var(--reviews-gold); }
-.reviews-intro { margin: 0 0 6px; color: #b9bbb3; font-size: 14px; line-height: 1.55; }
-
 .reviews-grid {
   position: relative;
   z-index: 1;
@@ -94,10 +88,9 @@
 
 @media (max-width: 780px) {
   .reviews-section { padding: 44px 20px; }
-  .reviews-heading { display: block; margin-bottom: 22px; }
+  .reviews-heading { margin-bottom: 22px; }
   .reviews-heading h2 { font-size: clamp(36px, 10.5vw, 48px); line-height: 1; }
   .reviews-eyebrow { font-size: 9px; }
-  .reviews-intro { margin-top: 14px; font-size: 13px; }
   .reviews-grid {
     width: calc(100% + 20px);
     grid-auto-columns: minmax(286px, 88vw);
